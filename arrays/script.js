@@ -1,40 +1,84 @@
 // simple function
-function callTheForce(power) {
-    if (power === 'lightning') {
-        document.write(`You called the ⚡ power`);
-    }
+
+function callTheForce(forceElement) {
+    var emoji = '';
     
-    if (power === 'fire') {
-        document.write(`You called the 🔥 power`);
+    switch (forceElement) {
+        case 'lightning':
+            emoji = '⚡';
+            break;
+
+        case 'fire':
+            emoji = '🔥';
+            break;
+
+        case 'telekinesis':
+        case 'mind control':
+        case 'mind reading':
+        case 'telepathy':
+            emoji = '🧠';
+            break;
+            
+        case 'jump':
+        case 'speed':
+        case 'strength':
+            emoji = '💪';
+            break;
     }
 
-    if (power === 'telekinesis' || 
-        power === 'mind control' || 
-        power === 'mind reading' ||
-        power === 'telepathy') {
-        document.write(`You called the 🧠 power`);
-    }
+    // if (forceElement === 'lightning') {
+        
+    // }
 
-    if (power === 'jump' ||
-        power === 'speed' ||
-        power === 'strength') {
-        document.write(`You called the 🦾 power`);
-    }
-} 
+    // else if (forceElement === 'fire') {
+    //     emoji = '🔥';
+    // }
 
-// get the power from the user
-// based on the power, print a message with the following emojis:
-// lightning - ⚡
-// fire - 🔥
-// telekinesis - 🧠
-// mind control - 🧠
-// mind reading - 🧠
-// telepathy - 🧠
-// jump - 🦾
-// speed - 🦾
-// strength - 🦾
+    // else if (forceElement === 'telekinesis' ||
+    //     forceElement === 'mind control' ||
+    //     forceElement === 'mind reading' ||
+    //     forceElement === 'telepathy') {
+    //     emoji = '🧠';
+    // }
 
-const power = prompt(`What power do you want to call?`);
+    // else if (
+    //     forceElement === 'jump' ||
+    //     forceElement === 'speed' ||
+    //     forceElement === 'strength') {
+    //     emoji = '💪';
+    // }
+
+    document.write(`You called the ${emoji} power`);
+}
+
+const theQuestion = "What power do you want to call?";
+
+// prompt the user for input and store it in a variable
+const power = prompt(theQuestion, 'lightning');
 
 callTheForce(power);
 
+
+
+// hoisting
+throwLSJedi();
+
+function throwLSJedi() {
+    console.log('WWSHWWSSSHHHH');
+}
+
+// ex1: fix the code:
+throwLSSith();
+var throwLSSith = function() {
+    console.log('WWSHWWSSSHHHH back at you');
+}
+
+throwLSSSith();
+let throwLSSSith = function() {
+    console.log('WWSHWWSSSHHHH #$@# u Jedi!');
+}
+
+throwLSTSith();
+const throwLSTSith = function() {
+    console.log('WWSHWWSSSHHHH #$@# u Jedi!');
+}
