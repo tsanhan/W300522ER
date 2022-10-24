@@ -28,7 +28,7 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 12. Use filter to filter out country start with 'E'
 
 13. Use reduce to sum all the numbers in the numbers array.
-14. Use reduce to concatenate all the countries and to produce this sentence: Finland, Sweden, Sweden, Denmark, Norway, Estonia, and IceLand are north European countries
+14. Use reduce to concatenate all the countries and to produce this sentence: Finland, Sweden, Denmark, Norway, IceLand, and Estonia are north European countries
 
 
 ***3***
