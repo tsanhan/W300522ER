@@ -1,8 +1,32 @@
-HW:
-1. create a function that take two numbers and return the sum of them
-2. create a function that take two numbers and return whether they can be divided by one another without a remainder.
-3. create a function that take a string (a single word) and capitalize the first letter and return the capitalized word.
-4. create a function that take a string (a couple of words) and capitalize the first letter of each word in the string and capitalized string.
-5. create a function that take two strings (parameter1 and parameter2), and return if parameter1 is a substring of parameter2.
-6. create a function (called isEven) that take a number and return whether it is even or not.
-7. create a function (called factorial) that take a number and return the factorial of that number.
+
+HW: 
+***1***. learn the functions: 
+forEach: https://www.w3schools.com/jsref/jsref_foreach.asp
+map:     https://www.w3schools.com/jsref/jsref_map.asp
+filter:  https://www.w3schools.com/jsref/jsref_filter.asp
+reduce:  https://www.w3schools.com/jsref/jsref_reduce.asp
+
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand', 'Estonia'];
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+***2***
+1. Explain the difference between forEach, map, filter, and reduce.
+2. Define a callback function before you use it in forEach, map, filter or reduce.
+3. Use forEach to console.log each country in the countries array.
+4. Use forEach to console.log each name in the names array.
+5. Use forEach to console.log each number in the numbers array.
+
+6. Use map to create a new array by changing each country to uppercase in the countries array.
+7. Use map to create an array of countries length from countries array.
+8. Use map to create a new array by changing each number to square in the numbers array
+9. Use map to change to each name to uppercase in the names array
+
+10. Use filter to filter out countries containing land.
+11. Use filter to filter out countries having six character.
+12. Use filter to filter out country start with 'E'
+
+13. Use reduce to sum all the numbers in the numbers array.
+14. Use reduce to concatenate all the countries and to produce this sentence: Finland, Sweden, Sweden, Denmark, Norway, Estonia, and IceLand are north European countries
+
