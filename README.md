@@ -30,3 +30,44 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 13. Use reduce to sum all the numbers in the numbers array.
 14. Use reduce to concatenate all the countries and to produce this sentence: Finland, Sweden, Sweden, Denmark, Norway, Estonia, and IceLand are north European countries
 
+
+***3***
+High Order Functions:
+what those functions print:
+
+1. 
+const higherOrder = function(n) {
+  const doSomething = function(m) {
+    const doWhatEver = function(t) {
+      return 2 * n + 3 * m + t
+    }
+    return doWhatEver
+  }
+  return doSomething
+}
+console.log(higherOrder(2)(3)(10))
+
+
+2.
+const numbers = [1, 2, 3, 4, 5]
+const sumArray = function(arr) {
+  let sum = 0
+  const callback = function(element) {
+    sum += element
+  }
+  arr.forEach(callback)
+  return sum
+}
+console.log(sumArray(numbers))
+
+3. 
+const numbers = [1, 2, 3, 4]
+
+const sumArray = function(arr) {
+  let sum = 0
+  arr.forEach(function(element) {
+    sum += element
+  })
+  return sum
+}
+console.log(sumArray(numbers))
