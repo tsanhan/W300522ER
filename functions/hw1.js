@@ -12,6 +12,7 @@ function capitalizeWords(words) {
     let result = '';
     for (let i = 0; i < wordsSplit.length; i++) {
         // DRY: Don't Repeat Yourself
+        
         result += capitalize(wordsSplit[i]) + ' ';
     }
     // let a = "asd";
