@@ -48,7 +48,7 @@ If `f` returns the larger number, return the string `"f"`.
 If `g` returns the larger number, return the string `"g"`.
 If the functions return the same number, return the string `"neither"`.
 
-Examples
+Examples:
 > whichIsLarger(() => 5, () => 10) ➞ "g"
 > 
 > whichIsLarger(() => 25,  () => 25) ➞ "neither"
@@ -64,6 +64,45 @@ Examples
 > 
 > asciiCapitalize("Oh what a beautiful morning.") ➞ "oH wHaT a BeauTiFuL moRNiNg."
 
-5. next lesson material
 
-6. learn next lesson recursion
+5. Create a function that takes a "base number" as an argument. This function should return another function which takes a new argument, and returns the sum of the "base number" and the new argument.
+
+Please check the examples below for a clearer representation of the behavior expected.
+
+> // Calling makePlusFunction(5) returns a new function that takes an input,
+> // and returns the result when adding 5 to it.
+> 
+> const plusFive = makePlusFunction(5)
+> 
+> plusFive(2) ➞ 7
+> 
+> plusFive(-8) ➞ -3
+> 
+> // Calling makePlusFunction(10) returns a new function that takes an input,
+> // and returns the result when adding 10 to it.
+> 
+> const plusTen = makePlusFunction(10)
+> 
+> plusTen(0) ➞ 10
+> 
+> plusTen(188) ➞ 198
+> 
+> plusFive(plusTen(0)) ➞ 15
+
+note: All inputs will be valid numbers.
+
+6. Write a function that returns an anonymous function, which transforms its input by adding a particular suffix at the end.
+Examples:
+> add_ly = add_suffix("ly")
+> 
+> add_ly("hopeless") ➞ "hopelessly"
+> add_ly("total") ➞ "totally"
+> 
+> add_less = add_suffix("less")
+> 
+> add_less("fear") ➞ "fearless"
+> add_less("ruth") ➞ "ruthless"
+
+7. next lesson material
+
+8. learn next lesson recursion
