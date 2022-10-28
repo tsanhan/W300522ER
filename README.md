@@ -1,4 +1,4 @@
-A. array algorithms
+## A. array algorithms and higher order functions
 
 1. Create a function that takes an array and returns the types of values (data types) in a new array.
 examples:
@@ -91,7 +91,7 @@ Please check the examples below for a clearer representation of the behavior exp
 
 note: All inputs will be valid numbers.
 
-6. Write a function that returns an anonymous function, which transforms its input by adding a particular suffix at the end.
+6. Write a function that returns an anonymous function, which transforms its input by adding a particular `suffix` at the end.
 Examples:
 > add_ly = add_suffix("ly")
 > 
@@ -103,6 +103,10 @@ Examples:
 > add_less("fear") ➞ "fearless"
 > add_less("ruth") ➞ "ruthless"
 
-7. next lesson material
+
+7. Create a function that takes the age in years and returns the age in days.
+
+
+## B. next lesson material
 
 8. learn next lesson recursion
