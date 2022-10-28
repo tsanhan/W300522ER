@@ -42,7 +42,7 @@ Remember that the length of all the arrays will be an even number, so it is not 
 
 
    
-Your function will be passed two functions, f and g, that don't take any parameters. Your function has to call them, and return a string which indicates which function returned the larger number.
+3. Your function will be passed two functions, f and g, that don't take any parameters. Your function has to call them, and return a string which indicates which function returned the larger number.
 
 If `f` returns the larger number, return the string `"f"`.
 If `g` returns the larger number, return the string `"g"`.
@@ -55,6 +55,15 @@ Examples
 > 
 > whichIsLarger(() => 505050, () => 5050) ➞ "f"
 
-1. next lesson material
 
-2. learn next lesson recursion
+4. Create a function that takes a string as input and capitalizes a letter if its ASCII code is even and returns its lower case version if its ASCII code is odd.
+
+> sciiCapitalize("to be or not to be!") ➞ "To Be oR NoT To Be!"
+> 
+> asciiCapitalize("THE LITTLE MERMAID") ➞ "THe LiTTLe meRmaiD"
+> 
+> asciiCapitalize("Oh what a beautiful morning.") ➞ "oH wHaT a BeauTiFuL moRNiNg."
+
+5. next lesson material
+
+6. learn next lesson recursion
