@@ -1,15 +1,15 @@
 ## A. array algorithms and higher order functions
-
+### higher order functions
 1. Create a function that takes an array and returns the types of values (data types) in a new array.
-examples:
+  examples:
 > `arrayValuesTypes([1, 2, "null", []])`
 > ➞ `["number", "number", "string", "object"]`
 > 
-> arrayValuesTypes(["214", true, false, 2, 2.15, [], null])
-> ➞ ["string", "boolean", "boolean", "number", "number", "object", "object"]
+> `arrayValuesTypes(["214", true, false, 2, 2.15, [], null])`
+> ➞ `["string", "boolean", "boolean", "number", "number", "object", "object"]`
 > 
-> arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214])
-> ➞ ["number", "string", "string", "object", "object", "boolean", "number"]
+> `arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214])`
+> ➞ `["number", "string", "string", "object", "object", "boolean", "number"]`
 
 
 
@@ -31,11 +31,11 @@ example:
 Therefore, solution = `[true, false, true, false, false]`
 
 examples: 
-> oddSum([11, 15, 6, 8, 9, 10]) ➞ [true, false, true, false, false]
+> `oddSum([11, 15, 6, 8, 9, 10])` ➞ [true, false, true, false, false]
 > 
-> oddSum([12, 21, 5, 9, 65, 32]) ➞ [false, true, true, true, false]
+> `oddSum([12, 21, 5, 9, 65, 32])` ➞ `[false, true, true, true, false]`
 > 
-> oddSum([1, 2, 3, 4, 5, 6]) ➞ [false, false, false, false, false]
+> `oddSum([1, 2, 3, 4, 5, 6])` ➞ `[false, false, false, false, false]`
 
 Notes
 Remember that the length of all the arrays will be an even number, so it is not necessary to measure lengths.
@@ -49,20 +49,20 @@ If `g` returns the larger number, return the string `"g"`.
 If the functions return the same number, return the string `"neither"`.
 
 Examples:
-> whichIsLarger(() => 5, () => 10) ➞ "g"
+> `whichIsLarger(() => 5, () => 10)` ➞ `"g"`
 > 
-> whichIsLarger(() => 25,  () => 25) ➞ "neither"
+> `whichIsLarger(() => 25,  () => 25)` ➞ `"neither"`
 > 
-> whichIsLarger(() => 505050, () => 5050) ➞ "f"
+> `whichIsLarger(() => 505050, () => 5050)` ➞ `"f"`
 
 
 4. Create a function that takes a string as input and capitalizes a letter if its ASCII code is even and returns its lower case version if its ASCII code is odd.
 
-> sciiCapitalize("to be or not to be!") ➞ "To Be oR NoT To Be!"
+> `sciiCapitalize("to be or not to be!")` ➞ `"To Be oR NoT To Be!"`
 > 
-> asciiCapitalize("THE LITTLE MERMAID") ➞ "THe LiTTLe meRmaiD"
+> `asciiCapitalize("THE LITTLE MERMAID")` ➞ `"THe LiTTLe meRmaiD"`
 > 
-> asciiCapitalize("Oh what a beautiful morning.") ➞ "oH wHaT a BeauTiFuL moRNiNg."
+> `asciiCapitalize("Oh what a beautiful morning.")` ➞ `"oH wHaT a BeauTiFuL moRNiNg."`
 
 
 5. Create a function that takes a "base number" as an argument. This function should return another function which takes a new argument, and returns the sum of the "base number" and the new argument.
@@ -72,41 +72,64 @@ Please check the examples below for a clearer representation of the behavior exp
 > // Calling makePlusFunction(5) returns a new function that takes an input,
 > // and returns the result when adding 5 to it.
 > 
-> const plusFive = makePlusFunction(5)
+> `const plusFive = makePlusFunction(5)`
 > 
-> plusFive(2) ➞ 7
+> `plusFive(2)` ➞ `7`
 > 
-> plusFive(-8) ➞ -3
+> `plusFive(-8)` ➞ `-3`
 > 
 > // Calling makePlusFunction(10) returns a new function that takes an input,
 > // and returns the result when adding 10 to it.
 > 
-> const plusTen = makePlusFunction(10)
+> `const plusTen = makePlusFunction(10)`
 > 
-> plusTen(0) ➞ 10
+> `plusTen(0)` ➞ `10`
 > 
-> plusTen(188) ➞ 198
+> `plusTen(188)` ➞ `198`
 > 
-> plusFive(plusTen(0)) ➞ 15
+> `plusFive(plusTen(0))` ➞ `15`
 
 note: All inputs will be valid numbers.
 
 6. Write a function that returns an anonymous function, which transforms its input by adding a particular `suffix` at the end.
 Examples:
-> add_ly = add_suffix("ly")
+> `add_ly = add_suffix("ly")`
 > 
-> add_ly("hopeless") ➞ "hopelessly"
-> add_ly("total") ➞ "totally"
+> `add_ly("hopeless")` ➞ `"hopelessly"`
+> `add_ly("total")` ➞ `"totally"`
 > 
-> add_less = add_suffix("less")
+> `add_less = add_suffix("less")`
 > 
-> add_less("fear") ➞ "fearless"
-> add_less("ruth") ➞ "ruthless"
+> `add_less("fear")` ➞ `"fearless"`
+> `add_less("ruth")` ➞ `"ruthless"`
 
+### Array algorithms
 
 7. Create a function that takes the age in years and returns the age in days.
+Examples:
+> `calcAge(65)` ➞ `23725`
+> 
+> `calcAge(0)` ➞ `0`
+> 
+> `calcAge(20)` ➞ `7300`
+> 
+Notes:
+- Use 365 days as the length of a year for this challenge.
+- Ignore leap years and days between last birthday and now.
+- Expect only positive integer inputs.
 
+8. Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+Examples:
 
+> `addUp(4)` ➞ `10`
+> 
+> `addUp(13)` ➞ `91`
+> 
+> `addUp(600)` ➞ `180300`
+
+## B. 
+go over:
+- [return keyword] https://www.youtube.com/watch?v=FioqUnOGlq8
 ## B. next lesson material
 
 8. learn next lesson recursion
