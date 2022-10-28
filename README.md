@@ -1,4 +1,11 @@
-## A. array algorithms and higher order functions
+## A. Go Over:
+- [the `return` keyword](https://www.youtube.com/watch?v=FioqUnOGlq8)
+- [higher order functions](https://www.youtube.com/watch?v=0aKZvNNf8BA)
+- [closure](https://www.youtube.com/watch?v=71AtaJpJHw0)
+- [arrow functions](https://www.youtube.com/watch?v=mrYMzpbFz18)
+- [functions (in general)](https://www.youtube.com/watch?v=gigtS_5KOqo)
+- [iife](https://www.youtube.com/watch?v=8GDk8sj0YgQ)
+## B. array algorithms and higher order functions
 ### higher order functions
 1. Create a function that takes an array and returns the types of values (data types) in a new array.
   examples:
@@ -127,9 +134,9 @@ Examples:
 > 
 > `addUp(600)` ➞ `180300`
 
-## B. 
-go over:
-- [return keyword] https://www.youtube.com/watch?v=FioqUnOGlq8
-## B. next lesson material
 
-8. learn next lesson recursion
+## C. next lesson material
+1. [recursion](https://www.youtube.com/watch?v=LteNqj4DFD8)
+2. [DOM](https://www.youtube.com/watch?v=KShnPYN-voI)
+3. [DOM manipulation](https://www.youtube.com/watch?v=y17RuWkWdn8)
+4. [DOM events](https://www.youtube.com/watch?v=0fy9TCcX8Uc)
