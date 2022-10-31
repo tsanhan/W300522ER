@@ -138,12 +138,14 @@ note: All inputs will be valid numbers.
 
 ## C. Recursion
 1. Write a JavaScript program to compute the sum of an array of integers.
+   
 Example : var array = [1, 2, 3, 4, 5, 6]
+
 Expected Output : 21
 
 [explanation + solution](https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-4.php)
 
-2. Sum
+1. Sum
 Write a function that finds the sum of the first n natural numbers. Make your function recursive.
 Examples:
 > `sum(5)` ➞ `15` // 1 + 2 + 3 + 4 + 5 = 15
@@ -173,10 +175,15 @@ Notes:
 solution:
 
 > function length(str, num = 0) {
+> 
 >   if(str[num] === undefined) {
+> 
 >    return num
+> 
 >   }
+> 
 >  return length(str, num + 1)
+> 
 > }
 
 5. Count the Vowels
@@ -198,7 +205,7 @@ solution: no solution 🤷‍♂️
 
 [solution + explanation](https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-3.php)
 
-1. Find the Index:
+7. Find the Index:
    Create a function that searches for the index of a given item in an array. If the item is present, it should return the index, otherwise, it should return `-1`.
 
 Examples
@@ -213,19 +220,26 @@ The given array is ordered.
 
 solution:
 > function search(arr, item, pos = 0) {
+> 
 >     if (pos >= arr.length) return -1;
+> 
 >     if (arr[pos] === item) return pos;
+> 
 >     return search(arr, item, pos + 1);
+> 
 > };
 
 8. Reverse a String
 Write a function that reverses a string. Make your function recursive.
 
 Examples
->  reverse("hello") ➞ "olleh"
->  reverse("world") ➞ "dlrow"
->  reverse("a") ➞ "a"
->  reverse("") ➞ ""
+>  `reverse("hello")` ➞ `"olleh"`
+> 
+>  `reverse("world")` ➞ `"dlrow"`
+> 
+>  `reverse("a")` ➞ `"a"`
+> 
+>  `reverse("")` ➞ `""`
 > 
 Notes:
 For non-base cases, your function must call itself at least once.
