@@ -141,7 +141,7 @@ note: All inputs will be valid numbers.
 1. Write a JavaScript program to compute the sum of an  
    array of integers.
 
-   Example : ```const array = [1, 2, 3, 4, 5, 6]```
+   Example : `const array = [1, 2, 3, 4, 5, 6]`
 
    Expected Output : `21`
 
@@ -150,13 +150,15 @@ note: All inputs will be valid numbers.
 1. Sum
    Write a function that finds the sum of the first n natural numbers. Make your function recursive.
    Examples:
-   ``` js
+
+   ```js
     sum(5) ➞ 15 // 1 + 2 + 3 + 4 + 5 = 15
     sum(1) ➞ 1
     sum(12) ➞ 78
-   ``` 
+   ```
 
-    Notes:
+   Notes:
+
    - Assume the input number is always positive.
 
 1. Write a JavaScript program to calculate the factorial of a number.
@@ -174,38 +176,42 @@ note: All inputs will be valid numbers.
    length("a") ➞ 1
    length("") ➞ 0
    ```
+
    solution:
 
-    ```javascript
-    function length(str, num = 0) {
-      if (str[num] === undefined) return num;
-      return length(str, num + 1);
-    }
-    ```
+   ```javascript
+   function length(str, num = 0) {
+     if (str[num] === undefined) return num;
+     return length(str, num + 1);
+   }
+   ```
 
-5. Count the Vowels
+1. Count the Vowels
    Create a function that takes a string and returns the number (count) of vowels contained within it.
    Examples:
+
    ```js
     countVowels("Celebration") ➞ 5
     countVowels("Palm") ➞ 1
     countVowels("Prediction") ➞ 4
    ```
+
    solution: no solution 🤷‍♂️
 
-6. Write a JavaScript program to get the integers in range (x, y)
+1. Write a JavaScript program to get the integers in range (x, y)
 
-   Example :  `range(2, 9)`
+   Example : `range(2, 9)`
 
    Expected Output : `[3, 4, 5, 6, 7, 8]`
 
    [solution + explanation](https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-3.php)
 
-7. Find the Index:
-   
+1. Find the Index:
+
    Create a function that searches for the index of a given item in an array. If the item is present, it should return the index, otherwise, it should return `-`.
 
    Examples
+
    ```js
    search([1, 2, 3, 4], 3) ➞ 2
    search([2, 4, 6, 8, 10], 8) ➞ 3
@@ -217,35 +223,41 @@ note: All inputs will be valid numbers.
    The given array is ordered.
 
    solution:
+
    ```javascript
    function search(arr, item, pos = 0) {
-      if (pos >= arr.length) return -1;
-      if (arr[pos] === item) return pos;
-      return search(arr, item, pos + 1);
-   };
+     if (pos >= arr.length) return -1;
+     if (arr[pos] === item) return pos;
+     return search(arr, item, pos + 1);
+   }
    ```
 
 1. Reverse a String
    Write a function that reverses a string. Make your function recursive.
 
-Examples
+   Examples
+
    ```js
- reverse("hello") ➞ "olleh"
+   reverse("hello") ➞ "olleh"
 
- reverse("world") ➞ "dlrow"
+   reverse("world") ➞ "dlrow"
 
- reverse("a") ➞ "a"
+   reverse("a") ➞ "a"
 
- reverse("") ➞ ""
+   reverse("") ➞ ""
    ```
 
- Notes:
- - For non-base cases, your function must call itself at least once.
+   Notes:
 
-solution:
-const reverse = (str) => {
-return str === "" ? "" : reverse(str.substr(1)) + str.charAt(0)
-}
+   - For non-base cases, your function must call itself at least once.
+
+   solution:
+
+   ```javascript
+   const reverse = (str) => {
+   return str === "" ? "" : reverse(str.substr(1)) + str.charAt(0);
+   };
+   ```
 
 ## D. next lesson material
 
