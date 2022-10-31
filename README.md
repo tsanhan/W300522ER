@@ -191,12 +191,14 @@ solution:
 solution: no solution 🤷‍♂️
 
 6. Write a JavaScript program to get the integers in range (x, y)
+   
    Example : range(2, 9)
+   
    Expected Output : [3, 4, 5, 6, 7, 8]
 
 [solution + explanation](https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-3.php)
 
-7. Find the Index:
+1. Find the Index:
    Create a function that searches for the index of a given item in an array. If the item is present, it should return the index, otherwise, it should return `-1`.
 
 Examples
