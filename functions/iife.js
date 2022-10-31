@@ -1,6 +1,7 @@
 // IIFE - Immediately Invoked Function Expression 
-(function () {
+(() => {
     document.querySelector('body').style.backgroundColor = 'red';
+
 
     const declarVar = () => {
         var x = 10;
@@ -36,5 +37,5 @@
     var welcome = welcomeMasters.map(cb);
 
     welcome.forEach(console.log)
-    
+
 })();
