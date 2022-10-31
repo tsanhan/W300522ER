@@ -141,16 +141,15 @@ note: All inputs will be valid numbers.
 Example : var array = [1, 2, 3, 4, 5, 6]
 Expected Output : 21
 
-
-
-
 [explanation + solution](https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-4.php)
 
 2. Sum
 Write a function that finds the sum of the first n natural numbers. Make your function recursive.
 Examples:
 > `sum(5)` ➞ `15` // 1 + 2 + 3 + 4 + 5 = 15
+> 
 > `sum(1)` ➞ `1`
+> 
 > `sum(12)` ➞ `78`
 Notes:
 - Assume the input number is always positive.
@@ -163,31 +162,31 @@ Notes:
 4. Length of a String
    Write a function that returns the length of a string. Make your function recursive.
    Examples:
-   > length("apple") ➞ 5
+   > `length("apple")` ➞ `5`
    >
-   > length("make") ➞ 4
+   > `length("make")` ➞ `4`
    >
-   > length("a") ➞ 1
+   > `length("a")` ➞ `1`
    >
-   > length("") ➞ 0
+   > `length("")` ➞ `0`
 
 solution:
 
 > function length(str, num = 0) {
-> if(str[num] === undefined) {
-> return num
-> }
-> return length(str, num + 1)
+>   if(str[num] === undefined) {
+>    return num
+>   }
+>  return length(str, num + 1)
 > }
 
 5. Count the Vowels
    Create a function that takes a string and returns the number (count) of vowels contained within it.
    Examples:
-   > countVowels("Celebration") ➞ 5
+   > `countVowels("Celebration")` ➞ `5`
    >
-   > countVowels("Palm") ➞ 1
+   > `countVowels("Palm")` ➞ `1`
    >
-   > countVowels("Prediction") ➞ 4
+   > `countVowels("Prediction")` ➞ `4`
 
 solution: no solution 🤷‍♂️
 
@@ -202,7 +201,9 @@ solution: no solution 🤷‍♂️
 
 Examples
 > `search([1, 2, 3, 4], 3)` ➞ `2`
+> 
 > `search([2, 4, 6, 8, 10], 8)` ➞ `3`
+> 
 > `search([1, 3, 5, 7, 9], 11)` ➞ `-1`
 Notes:
 If the item is not present, return `-1`.
