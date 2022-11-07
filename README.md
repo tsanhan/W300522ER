@@ -47,6 +47,7 @@
 
 
 ## C. We'll learn next lesson:
+
 1. dom manipulation (creating, adding and removing elements)
 2. css manipulation (adding and removing classes)
 3. bubbling vs capturing: stopPropagation
