@@ -37,6 +37,7 @@
       |-|-|-|
       |3|4|7|
       |5|5|10|
+      
     Hint: code to enter the number for the first column:
     ```js
     const firstRowFirstColumn = document.querySelectorAll("table tr:nth-child(1) td:nth-child(1)");
