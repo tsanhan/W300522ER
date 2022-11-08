@@ -54,9 +54,7 @@
     4. and then use the `join` method to join the array back to a string
        1. the `join` should have space (`" "`) as a separator
     5. this will be the html string that you will set to the innerHTML of the #text div
-  **solution:** 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/EHF7xBUAmrQ?start=110&end=209" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
+  **solution:** [here](https://www.youtube.com/embed/EHF7xBUAmrQ?start=110&end=209)
   
 ## C. We'll learn next lesson:
 
