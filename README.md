@@ -47,14 +47,17 @@
         </div>
     </code>
 
-  * hints on how to achieve this (if you think you can do it without hints, then don't read this):
+  **hints on how to achieve this (if you think you can do it without hints, then don't read this):**
     1. grab the inner text of #text
     2. use the `split` method to split the text into an array of words
     3. map the array of words and check if the length of the word is more then 7, if so, wrap the word with a span element with the color of the rgb value of the inputs
     4. and then use the `join` method to join the array back to a string
        1. the `join` should have space (`" "`) as a separator
     5. this will be the html string that you will set to the innerHTML of the #text div
-
+  **solution:** 
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/EHF7xBUAmrQ?start=110&end=209" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+  
 ## C. We'll learn next lesson:
 
 1. dom manipulation (creating, adding and removing elements)
