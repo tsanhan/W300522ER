@@ -266,94 +266,20 @@ pre[data-line] .line-highlight[data-end]:after {
 <ol>
 <li><a href="https://www.youtube.com/watch?v=KShnPYN-voI">DOM</a></li>
 <li><a href="https://www.youtube.com/watch?v=XF1_MlZ5l6M">DOM Events</a></li>
+<li>go over the class recording</li>
+<li>go over our solutions of the homework file (hw1.js)</li>
+<li>go over the class exercise (DOMManipulation.js)</li>
+<li>go over the class exercise (hw-dom-man.js)</li>
+<li>go over the class exercise (bubbling.js)</li>
 </ol>
 <h2 class="mume-header" id="b-practice">B. Practice:</h2>
 
-<ol>
-<li>
-<p>continuing our lesson, create a an event listener for the <code>input#inputText</code> element so that on every key pressed, the <code>output#outputText</code> element will show the value of the input element (<code>input#inputText</code>)</p>
-</li>
-<li>
-<p>create a button that when clicked, it will change the background color of the page to a random color.</p>
-<ul>
-<li>the color can be picked from an array of colors</li>
-<li>for example:</li>
-</ul>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;red&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;green&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;blue&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;yellow&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;pink&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;purple&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;orange&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;black&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;white&apos;</span><span class="token punctuation">]</span>`
-</pre></li>
-</ol>
-<ul>
-<li>the location in the array can be randomly picked using <code>Math.random()</code><br>
-Hint: example to change to red:<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">backgroundColor</span> <span class="token operator">=</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">;</span>
-</pre></li>
-</ul>
-<ol start="4">
-<li>
-<p>create a button with text <code>1</code> on it,<br>
-for example: <button>1</button></p>
-<ul>
-<li>on every click, it will increase the text by <code>1</code> (so after after one click: <button>2</button>, after 2 clicks: <button>3</button>)</li>
-</ul>
-</li>
-<li>
-<p>create a table with have 3 rows and 3 columns</p>
-<ul>
-<li>on every cell in the first 2 columns there should be a number<br>
-for example, the html should look like this:
-<table>
-<thead>
-<tr>
-<th>2</th>
-<th>3</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3</td>
-<td>4</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>5</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-<p>under the table there should be a button with the text &quot;sum&quot;<br>
-when the user clicks the button, the sum of the numbers in the first 2 columns should be displayed in the third column<br>
-for example, if the user clicks the button, the html should look like this:</p>
-<table>
-<thead>
-<tr>
-<th>2</th>
-<th>3</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3</td>
-<td>4</td>
-<td>7</td>
-</tr>
-<tr>
-<td>5</td>
-<td>5</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-<p>Hint: code to enter the number for the first column:</p>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> firstRowFirstColumn <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&quot;table tr:nth-child(1) td:nth-child(1)&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-const">const</span> firstRowSecondColumn <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&quot;table tr:nth-child(2) td:nth-child(1)&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-const">const</span> firstRowThirdColumn <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&quot;table tr:nth-child(3) td:nth-child(1)&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-firstRowThirdColumn<span class="token punctuation">.</span><span class="token property-access">innerText</span> <span class="token operator">=</span> firstRowFirstColumn<span class="token punctuation">.</span><span class="token property-access">innerText</span> <span class="token operator">+</span> firstRowSecondColumn<span class="token punctuation">.</span><span class="token property-access">innerText</span><span class="token punctuation">;</span>
-</pre></li>
-</ol>
+<p>&#x5E6;&#x5E8;&#x5D5; &#x5DB;&#x5E4;&#x5EA;&#x5D5;&#x5E8;. &#x5E6;&#x5E8;&#x5D5; &#x5E8;&#x5D9;&#x5E9;&#x5D5;&#x5DD; &#x5DC;&#x5D0;&#x5D9;&#x5E8;&#x5D5;&#x5E2; &#x5DB;&#x5DA; &#x5E9;&#x5D9;&#x5D5;&#x5E6;&#x5D2; alert &#x5D1;&#x5DC;&#x5D7;&#x5D9;&#x5E6;&#x5D4; &#x5E2;&#x5DC; &#x5D4;&#x5DB;&#x5E4;&#x5EA;&#x5D5;&#x5E8;.<br>
+&#x5D1;&#x5E6;&#x5E2;&#x5D5; &#x5E8;&#x5D9;&#x5E9;&#x5D5;&#x5DD; &#x5E0;&#x5D5;&#x5E1;&#x5E3; &#x5DC;&#x5DC;&#x5D7;&#x5D9;&#x5E6;&#x5D4; &#x5E2;&#x5DC; &#x5D4;&#x5DB;&#x5E4;&#x5EA;&#x5D5;&#x5E8; (&#x5DB;&#x5DE;&#x5D5; &#x5D1;&#x5E9;&#x5D0;&#x5DC;&#x5D4; &#x5D4;&#x5E7;&#x5D5;&#x5D3;&#x5DE;&#x5EA;) &#x5DB;&#x5DA; &#x5E9;&#x5D0;&#x5D5;&#x5EA;&#x5D5; &#x5E4;&#x5D5;&#x5E0;&#x5E7;&#x5E6;&#x5D9;&#x5D4; &#x5D9;&#x5D5;&#x5E4;&#x5E2;&#x5DC; &#x5E4;&#x5E2;&#x5DE;&#x5D9;&#x5D9;&#x5DD;.<br>
+&#x5D4;&#x5D5;&#x5E1;&#x5E3; div &#x5D5;-p. &#x5D1;&#x5E6;&#x5E2; &#x5E8;&#x5D9;&#x5E9;&#x5D5;&#x5DD; &#x5DC;&#x5D0;&#x5D9;&#x5E8;&#x5D5;&#x5E2; click &#x5E9;&#x5DC;&#x5D4;&#x5DD;, &#x5E2;&#x5DD; &#x5E9;&#x5D9;&#x5DE;&#x5D5;&#x5E9; &#x5D1;&#x5D0;&#x5D5;&#x5EA;&#x5D4; &#x5E4;&#x5D5;&#x5E0;&#x5E7;&#x5E6;&#x5D9;&#x5D4;.<br>
+&#x5E9;&#x5E0;&#x5D4; &#x5D0;&#x5EA; &#x5D4;&#x5E8;&#x5D9;&#x5E9;&#x5D5;&#x5DD; &#x5DE;&#x5D4;&#x5E9;&#x5D0;&#x5DC;&#x5D4; &#x5D4;&#x5E7;&#x5D5;&#x5D3;&#x5DE;&#x5EA; &#x5DB;&#x5DA; &#x5E9;&#x5EA;&#x5D5;&#x5E4;&#x5E2;&#x5DC; &#x5D4;-alert &#x5E8;&#x5E7; &#x5D1;&#x5DC;&#x5D7;&#x5D9;&#x5E6;&#x5D4; &#x5D4;&#x5E8;&#x5D0;&#x5E9;&#x5D5;&#x5E0;&#x5D4;. &#x5DB;&#x5DE;&#x5D5; &#x5DB;&#x5DF;, &#x5E9;&#x5E0;&#x5D4; &#x5D0;&#x5EA; &#x5D4;&#x5E8;&#x5D9;&#x5E9;&#x5D5;&#x5DD; &#x5DE;&#x5E9;&#x5D0;&#x5DC;&#x5D4; 2 &#x5DB;&#x5DA; &#x5E9;&#x5D0;&#x5DE;&#x5E0;&#x5DD; &#x5D4;&#x5E4;&#x5D5;&#x5E0;&#x5E7;&#x5E6;&#x5D9;&#x5D4; &#x5EA;&#x5E8;&#x5D5;&#x5E5; &#x5E4;&#x5E2;&#x5DE;&#x5D9;&#x5D9;&#x5DD;, &#x5D0;&#x5D1;&#x5DC; &#x5E8;&#x5E7; &#x5D1;&#x5DC;&#x5D7;&#x5D9;&#x5E6;&#x5D4; &#x5D4;&#x5E8;&#x5D0;&#x5E9;&#x5D5;&#x5E0;&#x5D4;, &#x5DC;&#x5D0;&#x5D7;&#x5E8; &#x5DE;&#x5DB;&#x5DF; &#x5DC;&#x5D0; &#x5D9;&#x5EA;&#x5D1;&#x5E6;&#x5E2; &#x5DB;&#x5DC;&#x5D5;&#x5DD;.<br>
+&#x5E6;&#x5D5;&#x5E8; SELECT &#x5E2;&#x5DD; &#x5DB;&#x5DE;&#x5D4; &#x5D0;&#x5D5;&#x5E4;&#x5E6;&#x5D9;&#x5D5;&#x5EA;. &#x5E6;&#x5D5;&#x5E8; &#x5E8;&#x5D9;&#x5E9;&#x5D5;&#x5DD; &#x5DC;&#x5D0;&#x5D9;&#x5E8;&#x5D5;&#x5E2; &#x5DB;&#x5DA; &#x5E9;&#x5DB;&#x5E9;&#x5D4;&#x5DE;&#x5E9;&#x5EA;&#x5DE;&#x5E9; &#x5D9;&#x5E9;&#x5E0;&#x5D4; &#x5D0;&#x5EA; &#x5D4;&#x5D1;&#x5D7;&#x5D9;&#x5E8;&#x5D4;, &#x5D9;&#x5D5;&#x5E6;&#x5D2; &#x5DC;-console.log &#x5D0;&#x5EA; &#x5D4;&#x5D1;&#x5D7;&#x5D9;&#x5E8;&#x5D4;.<br>
+&#x5D0;&#x5EA;&#x5D2;&#x5E8; &#x5D0;&#x5D9;&#x5DA; &#x5E0;&#x5D9;&#x5EA;&#x5DF; &#x5DC;&#x5D4;&#x5E8;&#x5E9;&#x5DD; &#x5DC;&#x5D0;&#x5D9;&#x5E8;&#x5D5;&#x5E2; &#x5DB;&#x5DA; &#x5E9;&#x5D4;-listener &#x5D9;&#x5EA;&#x5D1;&#x5E6;&#x5E2; &#x5E8;&#x5E7; 5 &#x5E4;&#x5E2;&#x5DE;&#x5D9;&#x5DD;?</p>
 <h2 class="mume-header" id="c-well-learn-next-lesson">C. We&apos;ll learn next lesson:</h2>
 
 <ol>
