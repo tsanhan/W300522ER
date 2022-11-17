@@ -40,7 +40,7 @@
     r.addEventListener('input', colorizeTextFunc);
     g.addEventListener('input', colorizeTextFunc);
     b.addEventListener('input', colorizeTextFunc);
-
+    
 
     
 })(window, document);
