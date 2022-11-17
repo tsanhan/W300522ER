@@ -2,15 +2,17 @@
 1. the lesson.
 
 ## Learn some methods at home (don;t we'll go over it in class)
-1. push/pop
-2. shift/unshift
-3. indexOf
-4. slice
-5. splice
+1. [arrays](https://www.youtube.com/watch?v=oJt1LP1F9SQ)
+2. [push/pop](https://www.youtube.com/watch?v=oJt1LP1F9SQ)
+3. [shift/unshift](https://www.youtube.com/watch?v=oJt1LP1F9SQ)
+4. [indexOf](https://www.youtube.com/watch?v=WgtVy-BhjdY)
+5. [slice](https://www.youtube.com/watch?v=JfZv9QNSpi4)
+6. [splice](https://www.youtube.com/watch?v=FFas8cMHVwg)
    
 ## B. Practice:
 1. easy:
-  1.1. Return the First Element in an Array:
+
+  * 1.1. Return the First Element in an Array:
     * Create a function that takes an array containing only numbers and return the first element.
     * Examples:
       * getFirstValue([1, 2, 3]) ➞ 1
@@ -18,26 +20,30 @@
       * getFirstValue([-500, 0, 50]) ➞ -500
     * Notes
       * The first element in an array always has an index of 0.
-  1.2. Pair Management
+  
+  * 1.2. Pair Management
     * Given two arguments, return an array which contains these two arguments.
     * Examples:
       * makePair(1, 2) ➞ [1, 2]
       * makePair(51, 21) ➞ [51, 21]
       * makePair(512124, 215) ➞ [512124, 215]
-  1.3. Drop the First Elements of an Array
+  
+  * 1.3. Drop the First Elements of an Array
     * create a function that accepts an array and create a slice of an array with n elements dropped from the beginning.
     * Examples:
       * drop([1, 2, 3], 1) ➞ [2, 3]
       * drop([1, 2, 3], 2) ➞ [3]
       * drop([1, 2, 3], 5) ➞ []
       * drop([1, 2, 3], 0) ➞ [1, 2, 3]
-  1.4. Reverse an Array
+
+  * 1.4. Reverse an Array
     * Write a function to reverse an array.
     * Examples:
       * reverse([1, 2, 3, 4]) ➞ [4, 3, 2, 1]
       * reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
       * reverse([]) ➞ []
-  1.5. Find the Smallest and Biggest Numbers
+
+  * 1.5. Find the Smallest and Biggest Numbers
     * Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
     * Examples:
       * minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
@@ -45,7 +51,8 @@
       * minMax([1]) ➞ [1, 1]
     * Notes
       * All test arrays will have at least one element and are valid.
-  1.6. Find the Index (Part 1)
+
+  * 1.6. Find the Index (Part 1)
     * Create a function that finds the index of a given item (do not use indexOf).
     * Examples:
       * search([1, 5, 3], 5) ➞ 1
@@ -66,7 +73,8 @@
     * Notes
       * Note the strict inequality
 
-2. medium
+2. medium:
+
   * 2.1. How Much is True?
     * Create a function which returns the number of true values there are in an array.
     * Examples:
@@ -97,7 +105,7 @@
     
     * To illustrate: changeEnough([25, 20, 5, 0], 4.25) should yield true, since having 25 quarters, 20 dimes, 5 nickels and 0 pennies gives you 6.25 + 2 + .25 + 0 = 8.50.
 
-    Examples: 
+    * Examples: 
       * changeEnough([2, 100, 0, 0], 14.11) ➞ false
       * changeEnough([0, 0, 20, 5], 0.75) ➞ true
       * changeEnough([30, 40, 20, 5], 12.55) ➞ true
