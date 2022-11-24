@@ -164,6 +164,6 @@
 2. objects
 
 ## D. next lesson material
-[random numbers](https://www.youtube.com/watch?v=UZqSpuUJPa0)
-[Object literals](https://www.youtube.com/watch?v=QB_oKKb4L3c)
-[JavaScript objects](https://www.youtube.com/watch?v=BRSg22VacUA)
+* [random numbers](https://www.youtube.com/watch?v=UZqSpuUJPa0)
+* [Object literals](https://www.youtube.com/watch?v=QB_oKKb4L3c)
+* [JavaScript objects](https://www.youtube.com/watch?v=BRSg22VacUA)
