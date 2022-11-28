@@ -136,7 +136,7 @@
             hobbies
         };
     };
-    
+
     const p = personFactory('Vic', 30, 'reading', 'writing', 'coding');
     console.log(p);
 
@@ -207,5 +207,148 @@
     vowelCount('Colt') // Map { 'o' => 1 }
     
     */
+    const printHi = () => {
+        console.log('hi');
+    }
 
+    const jedi = {
+        name: 'Vic',
+        age: 30,
+        isJedi: true,
+        'birth day': '12/12/1988',
+        strike: function () {
+            console.log('vvv sh sh sh...');
+        }
+    }
+
+    const cat = {
+        name: 'Mimi',
+        age: 2,
+        isJedi: false,
+        speak: function () {
+            console.log('meow');
+        }
+    }
+
+    const dog = {
+        name: 'Rex',
+        age: 3,
+        isJedi: false,
+        speak: function () {
+            console.log('woof');
+        },
+        // twice the same method: name space collision
+        // => the last one wins
+        speak: () => {
+            console.log('woof2');
+        }
+    }
+
+    const crazyDog = {
+        ...dog,
+        speak: () => {
+            console.log('crazy woof');
+        },
+        myName: function () {
+            console.log(this.name);
+        }
+    }
+
+    cat.speak();
+    dog.speak();
+    crazyDog.speak();
+    crazyDog.myName();
+
+    jedi.strike();
+
+
+    // DRY - Don't Repeat Yourself
+    class JediKnight {
+        constructor(name, age, isJedi) {
+            this.name = name;
+            this.age = age;
+            this.isJedi = isJedi;
+
+        }
+        myName() {
+            console.log(this.name);
+        }
+    }
+
+    const ObiOne = new JediKnight('ObiOne', 30, true);
+    const Yoda = new JediKnight('Yoda', 100, true);
+
+    ObiOne.myName();
+    Yoda.myName();
+
+    // class ex:
+    // * use this class, add a light saber color to the properties
+    // * add a method to the class that will print the light saber color + " go's vvv sh sh sh..."
+
+    // JSON: JavaScript Object Notation
+    console.log(ObiOne);
+
+    const oo = [{
+        name: 'ObiOne',
+        age: 30,
+        isJedi: true,
+        myName: function () {
+            console.log(this.name);
+        }
+    }];
+
+    // 1. "": must be double quotes
+    const oo1 = {
+        "name": 'ObiOne',
+        "age": 30,
+        "isJedi": true,
+        "myName": function () {
+            console.log(this.name);
+        }
+    }
+
+    console.log(oo1);
+
+    // 2. no functions: only properties
+    const oo2 = {
+        "name": "ObiOne",
+        "age": 30,
+        "isJedi": true
+    }
+
+    const ooStringify = JSON.stringify(oo);
+    console.log("ooStringify:", ooStringify);
+
+
+    const ooParse = JSON.parse(ooStringify);
+    console.log("ooParse:", ooParse);
+
+    document.querySelector('#save').addEventListener('click', () => {
+        const firstNameBox = document.getElementById("firstNameBox");
+        const lastNameBox = document.getElementById("lastNameBox");
+        const cityBox = document.getElementById("cityBox");
+
+        const user = {
+            firstName: firstNameBox.value,
+            lastName: lastNameBox.value,
+            city: cityBox.value
+        };
+
+        localStorage.setItem("userDetails", JSON.stringify(user));
+
+    });
+
+    document.querySelector('#load').addEventListener('click', () => {
+        const firstNameBox = document.getElementById("firstNameBox");
+        const lastNameBox = document.getElementById("lastNameBox");
+        const cityBox = document.getElementById("cityBox");
+
+        const str = localStorage.getItem("userDetails");
+
+        const user = JSON.parse(str);
+
+        firstNameBox.value = user.firstName;
+        lastNameBox.value = user.lastName;
+        cityBox.value = user.city;
+    });
 })();
