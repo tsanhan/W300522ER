@@ -76,5 +76,136 @@
     // USE YOUR OWN MOVIES
 
 
+    // Set
+    const id = document.querySelector('#id');
+    id.classList.add('red');
+
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 7, 8, 9, 10, 3, 4, 5];
+    const set = new Set();
+
+    set.add('red');
+
+    set.add('blue');
+
+    set.add('green');
+    set.add({ name: 'Vic' });
+
+    console.log(set);
+
+    set.forEach((color, color2) => {
+        console.log(color, color2);
+    });
+
+
+    console.log("has red:", set.has('red'));
+
+    console.log("keys:", set.keys());
+
+    console.log("values:", set.values());
+
+    console.log("entries:", set.entries());
+
+
+    // class ex:
+    // exclude any duplications from an array
+    const s = new Set(arr);
+    let rtnArr = Array.from(s);
+
+    // spread operator - ES6
+    rtnArr = [...s];
+    console.log(rtnArr);
+
+
+    const func = (...data) => {
+        console.log(data);
+    }
+
+    func(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+
+    const func2 = (a, b) => {
+        console.log(a, b);
+    }
+
+    func2(...[1, 2]); // func2(1, 2);
+
+    const personFactory = (name, age, ...hobbies) => {
+        return {
+            name,
+            age,
+            hobbies
+        };
+    };
+    
+    const p = personFactory('Vic', 30, 'reading', 'writing', 'coding');
+    console.log(p);
+
+
+    // Map
+    const map = new Map();
+    map.set('name', 'Vic');
+    map.set('age', 30);
+    map.set('age', 37);
+    map.set('hobbies', ['reading', 'writing', 'coding']);
+
+    console.log(map);
+
+    console.log("has red:", map.has('red'));
+
+    console.log("keys:", map.keys());
+
+    console.log("values:", map.values());
+
+    console.log("entries:", map.entries());
+
+    /* class (sets and maps):
+    1.
+    Return Sole Element in a Set:
+    
+    Given a set containing an element, return the sole element.
+    Examples:
+    const first = new Set();
+    first.add(1); 
+    elementSet(first) ➞ 1
+
+    const second = new Set();
+    second.add("apple"); 
+    elementSet(second) ➞ "apple"
+
+    const third  = new Set();
+    third.add(false); 
+    elementSet(third) ➞ false
+
+    2.
+    What does the following code return?
+    new Set([1,1,2,2,3,4]) 
+
+    3.
+    What does the following code return?
+    [...new Set("referee")].join("")
+
+    4.
+    What does the Map m look like after running the following code?
+    let m = new Map();
+    m.set([1,2,3], true);
+    m.set([1,2,3], false);
+
+    5.
+    hasDuplicate
+    Write a function called hasDuplicate which accepts an array 
+    and returns true or false if that array contains a duplicate
+    hasDuplicate([1,3,2,1]) // true
+    hasDuplicate([1,5,-1,4]) // false
+
+    6. (hard) - maybe for HW
+    vowelCount
+    Write a function called vowelCount which accepts a 
+    string and returns a map where the keys are numbers 
+    and the values are the count of the vowels in the string.
+
+    vowelCount('awesome') // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
+    vowelCount('Colt') // Map { 'o' => 1 }
+    
+    */
 
 })();
