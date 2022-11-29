@@ -1,72 +1,12 @@
 ## A. Go Over:
 
-1. the lesson.
+1. ***the lesson !!!!!!!***
+2. [Object literals](https://www.youtube.com/watch?v=QB_oKKb4L3c)
+3. [JavaScript objects](https://www.youtube.com/watch?v=BRSg22VacUA)
+4. [Javascript Classes](https://www.youtube.com/watch?v=_D6ilsRB9tw)
+5. [LocalStorage](https://www.youtube.com/watch?v=fYTTUBa-lPc)
 
-## B. Practice:
-
-### medium/easy:
-####  1. Index Multiplier
-  * Return the sum of all items in an array, where each item is multiplied by its index (zero-based). For empty arrays, return `0`.
-  * Examples:
-  ```js
-  indexMultiplier([1, 2, 3, 4, 5]) ➞ 40
-  // (1*0 + 2*1 + 3*2 + 4*3 + 5*4)
-
-  indexMultiplier([-3, 0, 8, -6]) ➞ -2
-  // (-3*0 + 0*1 + 8*2 + -6*3)
-  ```
-  * Notes
-    * All items in the array will be integers.
-  
-####  2. Finding Nemo
-  * You're given a string of words. You need to find the word "Nemo", and return a string like this: `I found Nemo at [the order of the word you find Nemo]!`.
-
-  * If you can't find Nemo, return `I can't find Nemo :(`.
-  * Examples:
-  ```js
-  findNemo("I am finding Nemo !") ➞ "I found Nemo at 4!"
-
-  findNemo("Nemo is me") ➞ "I found Nemo at 1!"
-
-  findNemo("I Nemo am") ➞ "I found Nemo at 2!"
-  ```
-  * Notes:
-    * `! , ? .` are always separated from the last word.
-    * Nemo will always look like Nemo, and not NeMo or other capital variations.
-    * Nemo's, or anything that says Nemo with something behind it, doesn't count as Finding Nemo.
-    * If there are multiple Nemo's in the sentence, only return the first one.
-  
-####  3. Clone an Array
-  * the following code  attempts to add a clone of an array to itself. There is no error message, but the results are not as expected. Can you fix the code?
-  ```js
-  function clone(arr) {
-    arr.push(arr)
-    return arr
-  }
-  ```
-  expected results:
-  ```js
-  clone([1, 1]) ➞ [1, 1, [1, 1]]
-  clone([1, 2, 3]) ➞ [1, 2, 3, [1, 2, 3]]
-  clone(["x", "y"]) ➞ ["x", "y", ["x", "y"]]
-  ```
-
-####  4.  Compact:
-  * create a function called `compact`, the funtion will accept an array and returnan array with all falsey values removed. The values false, null, 0, "", undefined,and NaN are falsey.
-  * Examples:
-  ```js
-  compact([0, 1, false, 2, "", 3]);   // => [1, 2, 3]
-  ```
-
-  5. Find the Second Largest Number
-  * Create a function that takes an array of numbers and returns the second largest number.
-  * Examples:
-  ```js
-  secondLargest([10, 40, 30, 20, 50]) // => 40
-  secondLargest([25, 143, 89, 13, 105]) // => 105
-  secondLargest([54, 23, 11, 17, 10]) // => 23
-  ```
-  
+## B. Practice arrays:
 ### hard:  
 ####  1. Currying Functions
   * Victor was reading about [currying functions](https://stackoverflow.com/questions/36314/what-is-currying). He needs your help to multiply an array of numbers using currying functions.
@@ -158,7 +98,7 @@
   * try to solve them again, but this time use recurcive functions.
     * that means that that you don't use loops (nor any Araay methods like reduce/filter/etc... those are loops too), you use the function itself to call itself.
 
-## B. Practice (Objects):
+## B. Practice Objects:
 ### easy:
 
 #### 1. Upvotes vs Downvotes
@@ -190,7 +130,7 @@
   fiftyThirtyTwenty(13450) ➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
   ```
 
-####  3. from class
+#### 3. from class
   * create a simple db (array) of objects (movie)
   * each movie should have: title (string), rating (number), hasWatched (boolean)
   * print out the movies using forEach
@@ -252,12 +192,103 @@
 
   generation(1, "f") ➞ "daughter"
   ```
-## C. We'll learn next lesson:
 
-1. random numbers
-2. objects
+
+
+## B. Practice Sets and Maps:
+### easy:
+#### 1. Return Sole Element in a Set:
+  * Given a set containing an element, return the sole element.
+  Examples:
+  ```js
+  const first = new Set();
+  first.add(1); 
+  elementSet(first) ➞ 1
+
+  const second = new Set();
+  second.add("apple"); 
+  elementSet(second) ➞ "apple"
+
+  const third  = new Set();
+  third.add(false); 
+  elementSet(third) ➞ false
+  ```
+
+#### 2. What does the following codes return? (make sure you understand the "why", not only the "what")
+  * 2.1. 
+  ```js
+   new Set([1,1,2,2,3,4])
+  ``` 
+  * 2.2. 
+  ```js 
+  [...new Set("referee")].join("")
+  ```
+
+#### 3. What does the Map m look like after running the following code? (make sure you understand the "why", not only the "what")
+  ```js
+  let m = new Map();
+  m.set([1,2,3], true);
+  m.set([1,2,3], false);
+  ```
+
+#### 4. hasDuplicate
+  * Write a function called hasDuplicate which accepts an array 
+    and returns true or false if that array contains a duplicate:
+  ```js
+  hasDuplicate([1,3,2,1]) // true
+  hasDuplicate([1,5,-1,4]) // false
+  ```
+### medium:
+#### 1. Vowel Count
+
+  Write a function called vowelCount which accepts a string and returns a map where the keys are numbers and the values are the count of the vowels(`a`, `e`, `i`, `o`, `u`) in the string.
+  ```js
+  vowelCount('awesome') // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
+  vowelCount('Colt') // Map { 'o' => 1 }
+  ```
+## B. Practice Classes:
+
+### easy:
+#### 1. Classes For Fetching Information on a Sports Player
+  * Create a class that takes the following four arguments for a particular football player:
+    * `name`
+    * `age`
+    * `height`
+    * `weight`
+  * Also, create three functions for the class that returns the following strings:
+    * `getAge()` returns "`name` is `age` age"
+    * `getHeight()` returns "`name` is `height` cm"
+    * `getWeight()` returns "`name` weighs `weight` kg"
+  * Examples:
+  ```js
+  p1 = new Player("David Jones", 25, 175, 75)
+
+  p1.getAge() ➞ "David Jones is age 25"
+  p1.getHeight() ➞ "David Jones is 175cm"
+  p1.getWeight() ➞ "David Jones weighs 75kg"
+  ```
+### medium:
+#### 1. 2D Array
+  * Create a class called `Matrix` that represents a 2D array. It should take in a 2D array as an argument to the constructor, and have the following methods:
+    * `print()`: prints the matrix
+    * `alter(row, col, num)`: changes the value at the given row and column to the given number
+    * `get(row, col)`: returns the value at the given row and column
+  * Examples:
+  ```js
+  let matrix = new Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
+  matrix.print();
+  // 1 2 3
+  // 4 5 6
+  // 7 8 9
+  matrix.alter(0, 0, 9);
+  matrix.print();
+  // 9 2 3
+  // 4 5 6
+  // 7 8 9
+  console.log(matrix.get(1, 1)); // 5
+  ```
+## C. We'll learn next lesson:
+ES6
 
 ## D. next lesson material
-* [random numbers](https://www.youtube.com/watch?v=UZqSpuUJPa0)
-* [Object literals](https://www.youtube.com/watch?v=QB_oKKb4L3c)
-* [JavaScript objects](https://www.youtube.com/watch?v=BRSg22VacUA)
+* [ES6](https://www.youtube.com/watch?v=NCwa_xi0Uuc)
