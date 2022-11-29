@@ -238,6 +238,10 @@
   hasDuplicate([1,3,2,1]) // true
   hasDuplicate([1,5,-1,4]) // false
   ```
+#### 5. print nicely
+  * create an array of objects, every object will represent a book (lets say: title, imageUrl, ISBN, author, year, plot)
+  * loop over this array and print the books nicely on the page (use CSS to make this look nice)
+
 ### medium:
 #### 1. Vowel Count
 
@@ -249,7 +253,34 @@
 ## B. Practice Classes:
 
 ### easy:
-#### 1. Classes For Fetching Information on a Sports Player
+
+#### 1. simple class creation:
+  * create a class containing the properties:
+    * `name`
+    * `color`
+    * `age`
+  * create an object from the class and print it's properties to the console
+
+#### 2. Circle
+  * create a Circle class, this class will accept `diameter`
+  * this class will also contain a method: `Scope()`
+    * this method calculate and return the Circle's scope.
+  * create an object from the class and print it's scope
+  
+#### 3. Dot
+  * a dot in 2D plane can be represented by 2 numbers: X and Y
+  * two dots can create a rectangle
+  * create a class called `Dot` that hold 2 numbers (x and y of the dot)
+  * create a class called `Rectangle` that hold 2 Dots
+    * the `Rectangle` class will have two methods:
+      1. `Scope()` that calculate return the rectangle's scope
+      2. `Area()` that calculate return the rectangle's area
+  * create an object from the Rectangle and print it's scope and area to the console
+
+#### 4. upgrade exercises 2 and 3
+  * get all the inputs for creation from the UI (html)
+  * add method `drow` to the `Rectangle` and `Circle` and accept the selector where to draw the shape
+#### 5. Classes For Fetching Information on a Sports Player
   * Create a class that takes the following four arguments for a particular football player:
     * `name`
     * `age`
