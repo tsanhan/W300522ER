@@ -262,34 +262,12 @@
     jedi.strike();
 
 
-    // DRY - Don't Repeat Yourself
-    class JediKnight {
-        constructor(name, age, isJedi) {
-            this.name = name;
-            this.age = age;
-            this.isJedi = isJedi;
-
-        }
-        myName() {
-            console.log(this.name);
-        }
-    }
-
-    const ObiOne = new JediKnight('ObiOne', 30, true);
-    const Yoda = new JediKnight('Yoda', 100, true);
-
-    ObiOne.myName();
-    Yoda.myName();
-
-    // class ex:
-    // * use this class, add a light saber color to the properties
-    // * add a method to the class that will print the light saber color + " go's vvv sh sh sh..."
-
+    
     // JSON: JavaScript Object Notation
-    console.log(ObiOne);
+    console.log(ObiWan);
 
     const oo = [{
-        name: 'ObiOne',
+        name: 'ObiWan',
         age: 30,
         isJedi: true,
         myName: function () {
@@ -299,7 +277,7 @@
 
     // 1. "": must be double quotes
     const oo1 = {
-        "name": 'ObiOne',
+        "name": 'ObiWan',
         "age": 30,
         "isJedi": true,
         "myName": function () {
@@ -311,7 +289,7 @@
 
     // 2. no functions: only properties
     const oo2 = {
-        "name": "ObiOne",
+        "name": "ObiWan",
         "age": 30,
         "isJedi": true
     }
@@ -351,4 +329,6 @@
         lastNameBox.value = user.lastName;
         cityBox.value = user.city;
     });
+
+
 })();
