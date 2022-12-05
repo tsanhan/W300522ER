@@ -243,7 +243,7 @@
     // 2. I don't want filter out all the client that prime as a loan (prime doesn't really make $$ to us!)
     // do 1. again only fo the clients that don't have prime as a loan  
 
-    
+
     // async await
 
 })();
