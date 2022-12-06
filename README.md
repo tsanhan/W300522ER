@@ -7,12 +7,12 @@
 
 ## B. Practice Promise:
 ### exercise from class:  
-  * assuming the folowwing Promise objexts:
+  * assuming the folowwing Promise objets:
 ``` js
 const houseAddressProm = new Promise((resolve, reject) => {
         setTimeout(() => {
             const addresses = [{
-                street: 'ba shomron',
+                street: 'ba sharon',
                 id: 1
             }, {
                 street: 'yavne',
@@ -85,7 +85,7 @@ const houseAddressProm = new Promise((resolve, reject) => {
 ```
   1. I want to understand how my market is doing: 
   * please print to the console who is taking what loans for what house
-  * for example: "Gez is taking a loan for the house in ba shomron for the tamhil: tzamud and prime" 
+  * for example: "Gez is taking a loan for the house in ba sharon for the tamhil: tzamud and prime" 
 
   2. I don't want filter out all the client that prime as a loan (prime doesn't really make $$ to us!)
   * do 1. again only fo the clients that don't have prime as a loan
