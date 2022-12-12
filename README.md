@@ -1,58 +1,27 @@
 ## A. Go Over:
 
 1. ***the lesson !!!!!!!***
-2. go to 'object' branch and finish the homework there
-3. [Promise](https://www.youtube.com/watch?v=DHvZLI7Db8E)
-4. [Async Await](https://www.youtube.com/watch?v=V_Kr9OSfDeU)
-
-## B. Practice Async Await 101:
+2. [Promise](https://www.youtube.com/watch?v=DHvZLI7Db8E)
+3. [Async Await](https://www.youtube.com/watch?v=V_Kr9OSfDeU)
+4. [ES6 Modules](https://www.youtube.com/watch?v=cRHQNNcYf6s)
+5. [Fetch API](https://www.youtube.com/watch?v=cuEtnrL9-H0)
+## B. Practice Promise/async-await/modules/fetch:
 ### exercise from class:  
-  #### 1. create a function named compareToTen, accepts a number as a parameter (num)
-   * the function return a Promise which:
-   * if the num > 10, resolve with the string "YAY!"
-   * if the num <= 10, reject with the string "NAY!"
-   * use random number between 1-20 to test your function
+  #### 1. get date from jsonplaceholder api:
+  * investigate and try out some of the code snippits in the jsonplaceholder [api page](https://jsonplaceholder.typicode.com/guide/)
+  #### 2. fetch data
+  * create an async function named `fetchData` which accepts a url as a parameter (url) and return a Promise, the Promise will resolve with the data from the url. (use fetch api)
+  * put this function in a file called dataAccess.js, and export it
+  * in the main module (the file being referenced in the html file) import the function and use it to fetch data from the [`/users` route](https://jsonplaceholder.typicode.com/users) 
+  * print the data to the console
 
-  #### 2. create a function named arrayCounter which accepts an array (arr) as a parameter
-   * the function return a Promise which:
-   * if the array length is less than 5, reject with the string "array is too short"
-   * if the array length is more/equal than 5, resolve with the string "array is too long"
-   * declare a variable that named 'data' (const data = [1,2,3,4,5,6,7,8,9,10])
-   * invoke the arrayCounter function and pass the variable 'data' as a parameter
-   * use async await to handle the promise
-   * the handle should go like this:
-       * if the promise is resolved, create a list on the DOM with the array elements
-       * if the promise is rejected, write a error message in an alert 
-
-  #### 3. create two Promise objects (p1, p2) which:
-   * both promises will resolve after a second.
-   * p1 will resolve with the string "p1"
-   * p2 will resolve with the string "p2"
-   * the order of the code chan change.
-   * how can you make sure the print order is the same as the promises order? (p1 then p2)
-   * write code to make sure the order is correct, even if you switch the places of the promises code.
-   * don't use async await* 😉
-
-  #### 4. create a function named getDog which accepts a number as a parameter (num)
-   * the function return a Promise which:
-   * if the num is even, resolve with the string "dog"
-   * if the num is odd, reject with the string "cat"
-   * use async await to handle the promise
-   * the handle should go like this:
-       * if the promise is resolved, write a success message in an alert
-       * if the promise is rejected, write a error message in an alert 
-   * use random number between 1-20 to test your function
-
-  #### 5. do the same as the previous exercise (4), but...
-   * this time the random number should be resolved from a Promise object
-   * create a function named getRandom which accepts a number as a parameter (num)
-   * the function return a Promise that will resolve after 1 second.
-   * the Promise will contain a random number between 0 and the number passed to getRandom function (num);
-
-   * use `.then` to chain the result from the getRandom function to the getDog function.
-   * after you succeeded with the `.then` chain, try to do the same with `async await`
-
- 
+  #### 3. create html elements:
+  * use [bootstrap cdn](https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css) to style the html using bootstrap 
+  * create a function named `createUserHtmlElement` which accepts a user JSON object as a parameter (user) and return an html element (div) with the user data in it.
+    * use document.createElement to create the element
+    * you can get the html for the card [here](https://getbootstrap.com/docs/5.2/components/card/)
+    *  this element should contain the user data in it, like the name, email, phone, etc.
+    * this means you need to create inner elements and add them using `appendChild`.
    
 ## B. Practice Async Await Challange:
 ### 1. take the HW from the previous lesson and convert it to async await 
@@ -67,10 +36,5 @@
   * if the boolean is `false`, Promise will reject with false, and will be chained to another function (handler) that will generation a constant number (21), THAT number will be the `getRandom` function parameter, meaning it will the the number  `getRandom` need to continue the chain to handle the promise like #4 from `Practice Async Await 101`
 
 
-## C. We'll learn next lesson:
-* ES6 Modules
-* Fetch API
 
-## D. next lesson material
-* [ES6 Modules](https://www.youtube.com/watch?v=cRHQNNcYf6s)
-* [Fetch API](https://www.youtube.com/watch?v=cuEtnrL9-H0)
+
