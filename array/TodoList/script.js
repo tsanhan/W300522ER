@@ -1,44 +1,33 @@
-(() => {
-    // do {
-    // } while (condition);
 
+import { addTodo } from "./add.js";
+import { deleteTodo } from "./delete.js";
+import { printList } from "./print.js";
 
-    const todos = ["Buy milk", "Eat dinner", "Nap"];
-    let input;
+const todos = ["Buy milk", "Eat dinner", "Nap"];
+let input;
+
+const inputProm = () => new Promise((resolve, reject) => {
+    input = prompt("What would you like to do?");
+    resolve(input);
+});
+const runWhileLoop = async () => {
     do {
-        input = prompt("What would you like to do?");
+        input = await inputProm();
         if (input === "list") {
-            printList();
+            printList(todos);
         } else if (input === "new") {
-            addTodo();
+            addTodo(todos);
         } else if (input === "delete") {
-            deleteTodo();
+            deleteTodo(todos);
         }
     } while (input !== "quit");
+};
 
-    console.log("OK, YOU QUIT THE APP");
+runWhileLoop();
 
 
-    function printList() {
-        console.log("***** printing list *****");
-        todos.forEach((todo, i) => {
-            console.log(`${i}: ${todo}`);
-        });
-        console.log("***********************");
-    }
 
-    function addTodo() {
-        const newTodo = prompt("Enter new todo");
-        todos.push(newTodo);
-        console.log("Added todo");
-    }
+console.log("OK, YOU QUIT THE APP");
 
-    function deleteTodo() {
-        // const theTodo = prompt("Enter the todo to delete");
-        // const i = todos.indexOf(theTodo);
-        // todos.splice(i, 1);
-        var index = prompt("Enter index of todo to delete");
-        todos.splice(+index, 1);
-        console.log("Deleted todo");
-    }
-})();
+
+
