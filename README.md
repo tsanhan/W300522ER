@@ -65,4 +65,7 @@
   * think of a nice way to show those comments (can be using an absulute position like what we did in with star wars)
   #### 2. save http calls
   * think of a way to save http calls.
-  * if you allready got the posts for a user once, there is no need to go and get them again, right? same thing with the comments  
+  * if you allready got the posts for a user once, there is no need to go and get them again, right? same thing with the comments
+  * u can use:
+    * a big object that will contain all the data you got from the api (include the users, posts and comments) and you can use it to get the data you need  
+    * save the responses in local storage (use `localStorage.setItem` and `localStorage.getItem` to save and get data from local storage)
