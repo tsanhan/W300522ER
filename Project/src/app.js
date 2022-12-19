@@ -4,7 +4,7 @@ import { onChangePage } from "./routes/router.js";
 
 
 //#region האזנה לאירועים
-HOME_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.HOME + '1'));
+HOME_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.HOME));
 ABOUT_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.ABOUT));
 CREATE_PIC_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.CREATE_PIC));
 LOGIN_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.LOGIN));
