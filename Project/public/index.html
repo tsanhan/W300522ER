@@ -30,13 +30,13 @@
 
                     <ul class="navbar-nav me-auto mb-2 mb-xl-0 justify-content-between" style="width: -webkit-fill-available;">
                         <li class="nav-item">
-                            <span class="nav-link cursor">About</span>
+                            <span class="nav-link active cursor" id="about-page-link">About</span>
                         </li>
                         <li class="nav-item me-auto">
-                            <span class="nav-link cursor">Add Pic</span>
+                            <span class="nav-link active cursor" id="create-pic-link">Add Pic</span>
                         </li>
                         <li class="nav-item">
-                            <span class="nav-link cursor">Login</span>
+                            <span class="nav-link active cursor" id="login-page-link">Login</span>
                         </li>
                     </ul>
                 </div>
@@ -44,10 +44,33 @@
         </nav>
     </header>
     <main>
-     
+        <!-- דף הבית -->
+        <div id="home-page" class="d-block">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="home-page-title" class="text-center display-4">HOME PAGE</h1>
+                    <h2 id="home-page-subtitle" class="fs-5">Here you can pictures</h2>
+                    <hr />
+                </div>
+            </div>
+        </div>
 
+        <!-- דף אודות -->
+        <div id="about-page" class="d-none">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="about-page-title" class="text-center display-4">ABOUT PAGE</h1>
+                    <h2 id="about-page-subtitle" class="fs-5">Here you can pictures</h2>
+                    <hr />
+                </div>
+            </div>
+        </div>
     </main>
-    <footer></footer>
+    <footer class="border-top pt-3 bg-dark center">
+        <p class="text-light">Created By Victor Yampolsky &copy;</p>
+    </footer>
 </body>
 
 </html>
