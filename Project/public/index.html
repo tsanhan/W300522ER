@@ -28,12 +28,13 @@
 
                 <div class="collapse navbar-collapse" id="navbarSlideshow">
 
-                    <ul class="navbar-nav me-auto mb-2 mb-xl-0 justify-content-between" style="width: -webkit-fill-available;">
+                    <ul class="navbar-nav me-auto mb-2 mb-xl-0 justify-content-between"
+                        style="width: -webkit-fill-available;">
                         <li class="nav-item">
                             <span class="nav-link active cursor" id="about-page-link">About</span>
                         </li>
                         <li class="nav-item me-auto">
-                            <span class="nav-link active cursor" id="create-pic-link">Add Pic</span>
+                            <span class="nav-link active cursor" id="create-pic-page-link">Add Pic</span>
                         </li>
                         <li class="nav-item">
                             <span class="nav-link active cursor" id="login-page-link">Login</span>
@@ -67,8 +68,41 @@
                 </div>
             </div>
         </div>
+        <!-- דף יצירת תמונה -->
+        <div id="create-pic-page" class="d-none">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="create-pic-title" class="text-center display-4">CREATE PIC PAGE</h1>
+                    <h2 id="create-pic-subtitle" class="fs-5">Here you can pictures</h2>
+                    <hr />
+                </div>
+            </div>
+        </div>
+        <!-- דף התחברות -->
+        <div id="login-page" class="d-none">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="login-title" class="text-center display-4">LOGIN PIC PAGE</h1>
+                    <h2 id="login-subtitle" class="fs-5">Here you can pictures</h2>
+                    <hr />
+                </div>
+            </div>
+        </div>
 
-        
+        <!-- דף שגיאה 404 -->
+        <div id="error-404-page" class="d-none">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="about-page-title" class="text-center display-4">ERROR 404</h1>
+                    <h2 id="about-page-subtitle" class="fs-5">Page not found</h2>
+                    <hr />
+                    <p id="return-to-home-page-link" class="cursor text-primary">click to return to home page</p>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="border-top pt-3 bg-dark center">
         <p class="text-light">Created By Victor Yampolsky &copy;</p>
