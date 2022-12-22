@@ -1,9 +1,21 @@
-export default INITIAL_DATA ={
+const INITIAL_DATA = {
     pictures: [
         {
-            url: 'https://images.unsplash.com/photo-1611634780928-8b1f2e1b1b1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-            alt: 'sunset',
-            credit: "igor"
+            url: "https://cdn.pixabay.com/photo/2022/03/12/19/14/sea-7064686_960_720.jpg",
+            alt: "sunset",
+            credit: "Gorge W Bosh"
+        },
+        {
+            url: "https://cdn.pixabay.com/photo/2021/12/21/08/29/owl-6884773_960_720.jpg",
+            alt: "owl",
+            credit: "Jessica Rabbit"
+        },
+        {
+            url: "https://cdn.pixabay.com/photo/2022/02/26/07/06/butterfly-7035308_960_720.jpg",
+            alt: "butterfly",
+            credit: "Tyra Banks"
         }
     ]
 }
+
+export default INITIAL_DATA;

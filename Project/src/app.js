@@ -11,9 +11,11 @@ import PAGES from "./models/pageModel.js";
 import { onChangePage } from "./routes/router.js";
 import { renderSlider as render } from "./services/renderSlider.js";
 import { setCounter } from "./services/picService.js"; 
+import INITIAL_DATA  from "./initialData/initialData.js";
+
 
 //#region הגדרת משתנים גלובליים
-let pictures = [];
+let pictures = INITIAL_DATA.pictures;
 let counter = 0;
 //#endregion
 
