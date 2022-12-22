@@ -1,24 +1,50 @@
-import { ABOUT_PAGE_LINK, LINK_HOME_PAGE, HOME_PAGE_LINK, CREATE_PIC_PAGE_LINK, LOGIN_PAGE_LINK } from "./services/domService.js";
+import { 
+    ABOUT_PAGE_LINK, 
+    LINK_HOME_PAGE, 
+    HOME_PAGE_LINK, 
+    CREATE_PIC_PAGE_LINK, 
+    LOGIN_PAGE_LINK,
+    SLIDER_PREV_BTN,
+    SLIDER_NEXT_BTN,
+} from "./services/domService.js";
 import PAGES from "./models/pageModel.js";
 import { onChangePage } from "./routes/router.js";
+import { renderSlider as render } from "./services/renderSlider.js";
+import { setCounter } from "./services/picService.js"; 
 
+//#region הגדרת משתנים גלובליים
+let pictures = [];
+let counter = 0;
+//#endregion
+
+// אתחול הצגה ראשונית
+render(pictures);
+
+
+
+//slider logic
+const onChangeSliderPic = controller => {
+    counter = setCounter(pictures, counter, controller);
+    render(pictures, counter);
+}
+
+
+//#endregion
 
 //#region האזנה לאירועים
+// ניתוב דפים
 HOME_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.HOME));
 ABOUT_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.ABOUT));
 CREATE_PIC_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.CREATE_PIC));
 LOGIN_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.LOGIN));
 LINK_HOME_PAGE.addEventListener('click', () => onChangePage(PAGES.HOME));
 
+// מצגת תמונות
+SLIDER_PREV_BTN.addEventListener('click', () => onChangeSliderPic('prev'));
+SLIDER_NEXT_BTN.addEventListener('click', () => onChangeSliderPic('next'));
+
 //#endregion
 
 
-// class assignment:
-// 1. I want to be able to bounce between pages: 'home', 'about', 'add pic' and login.
-// 2. create another page for 404 (in case the user got into a page that did not match any of the pages)
-// 3. create a page for 'add pic' and 'login'
-// 4. create links for 'add pic' and 'login'
-// 5. add a nice title and subtitle to the pages
-// 6. add the the page model keys and values for there pages
-// 7. add the pages to the domService
-// 8. add event listeners for the links in the nav for these pages 
+
+
