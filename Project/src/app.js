@@ -12,16 +12,17 @@ import { onChangePage } from "./routes/router.js";
 import { renderSlider as render } from "./services/renderSlider.js";
 import { setCounter } from "./services/picService.js"; 
 import INITIAL_DATA  from "./initialData/initialData.js";
-
+import Picture from "./models/PictureModel.js";
 
 //#region הגדרת משתנים גלובליים
 let pictures = INITIAL_DATA.pictures;
 let counter = 0;
+
+
 //#endregion
 
 // אתחול הצגה ראשונית
 render(pictures);
-
 
 
 //slider logic
