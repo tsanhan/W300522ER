@@ -1,3 +1,4 @@
+import { randomNumBetween } from "../utils/algoMethods.js";
 class Picture {
     #id;
     url;
