@@ -1,4 +1,4 @@
-import { randomNumBetween } from '../utils.js';
+import { makeFirstLetterCapital, randomNumBetween } from '../utils/algoMethods.js';
 class User {
     //#region props
     #id;
@@ -11,14 +11,14 @@ class User {
         houseNumber: '',
         zip: ''
     };
-    phone;
+    #phone;
     #email;
     #password;
     #createdAt;
     #isAdmin = false;
     #isBusiness = false;
     //#endregion
-
+    
     constructor(user, users = []) {
         const {
             name,
@@ -39,7 +39,7 @@ class User {
 
         this.generateId(users);
         this.#name = name;
-        this.phone = phone;
+        this.#phone = phone;
         this.#email = email;
         this.#password = password;
         this.#isAdmin = isAdmin;
@@ -59,6 +59,17 @@ class User {
     get _id() {
         return this.#id;
     }
+
+    setName(first, last) {
+        const rg = /([^A-Za-z ])*/g;
+        const leanFirstName = first.replace(rg, "");
+        const leanLastName = last.replace(rg, "");
+        const firstName = makeFirstLetterCapital(leanFirstName);
+        const lastName = makeFirstLetterCapital(leanLastName);
+        this.#name = `${firstName} ${lastName}`;
+    }
+
+    
 }
 
 export default User;

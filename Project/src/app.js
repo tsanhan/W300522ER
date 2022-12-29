@@ -8,9 +8,11 @@ import {
     SLIDER_NEXT_BTN,
 } from "./services/domService.js";
 import PAGES from "./models/pageModel.js";
+import User from "./models/UserModel.js";
 import { onChangePage } from "./routes/router.js";
 import { renderSlider as render } from "./services/renderSlider.js";
 import { setCounter } from "./services/picService.js";
+
 import initialData from "./initialData/initialData.js";
 
 //#region הגדרת משתנים גלובליים
@@ -48,6 +50,11 @@ SLIDER_NEXT_BTN.addEventListener('click', () => onChangeSliderPic('next'));
 
 //#endregion
 
-
+const user = new User({
+    address: {}
+})
+console.log(user);
+user.setName("  vic @#$234  ", "   yDFGp   ");
+console.log(user);
 
 
