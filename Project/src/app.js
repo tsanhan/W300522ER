@@ -53,8 +53,5 @@ SLIDER_NEXT_BTN.addEventListener('click', () => onChangeSliderPic('next'));
 const user = new User({
     address: {}
 })
-console.log(user);
-user.setName("  vic @#$234  ", "   yDFGp   ");
-console.log(user);
-
-
+user.phone = '054-1234567';
+console.log(user.phone);

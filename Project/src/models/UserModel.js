@@ -1,4 +1,4 @@
-import { makeFirstLetterCapital, randomNumBetween } from '../utils/algoMethods.js';
+import { makeFirstLetterCapital, randomNumBetween, generateUniqNumber } from '../utils/algoMethods.js';
 class User {
     //#region props
     #id;
@@ -37,7 +37,7 @@ class User {
             isBusiness = false
         } = user;
 
-        this.generateId(users);
+        this.#id = generateUniqNumber(users, "_id"); // make this work, 
         this.#name = this.setName(first, last);
         this.#phone = this.checkPhone(phone);
         this.#email = this.checkMail(email, users);
@@ -49,12 +49,12 @@ class User {
         this.#createdAt = new Date();
     }
 
-    generateId(array) {
-        const random = randomNumBetween(1_000_000, 9_999_999);
-        const user = array.find(usr => usr._id === random);
-        if (!user) return this.#id = random;
-        this.generateId(array);
-    }
+    // generateId(array) {
+    //     const random = randomNumBetween(1_000_000, 9_999_999);
+    //     const user = array.find(usr => usr._id === random);
+    //     if (!user) return this.#id = random;
+    //     this.generateId(array);
+    // }
 
     get _id() {
         return this.#id;
@@ -86,10 +86,10 @@ class User {
         throw new Error('the phone should be valid');
     }
 
-    checkMail(email, users = []) { 
+    checkMail(email, users = []) {
         const rg = /^.+@.+\..{2,}$/g;
         if (email.match(rg) === null) throw new Error('the email should be valid');
-        
+
         const user = users.find(usr => usr.email === email);
         if (!user) return email;
         throw new Error('this email is already in use');
@@ -113,7 +113,7 @@ class User {
 
     get isAdmin() {
         return this.#isAdmin;
-    }
+    } 
 
     get isBusiness() {
         return this.#isBusiness;
@@ -125,10 +125,14 @@ class User {
     set isBusiness(value) {
         this.#isBusiness = value;
     }
+    
+    set phone(value) {
+        this.#phone = this.checkPhone(value);
+    }
 
-    // setter for phone
-    // setter for name
-
+    set name({ first, last }) {
+        this.#name = this.setName(first, last);
+    }
 }
 
 export default User;
