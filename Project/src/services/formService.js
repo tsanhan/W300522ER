@@ -2,7 +2,7 @@ const useForm = () => {
     window.data = {};
     let errors = {};
 
-
+    /************* validate term ***************/
     const validateTerm = (field, validation) => {
         let errors = [];
         const {
@@ -48,7 +48,28 @@ const useForm = () => {
         return errors.length ? errors : null;
     }
 
-    
+    /************* input validation ***************/
+    const onValidateField = (input, errorSpan, validation = {}) => {
+        data[input.name] = input.value;
+        errorSpan.innerHTML = '';
+        const errorsForField = validateTerm(input, validation);
+        if (errorsForField) {
+            errorsForField.forEach(error => errorSpan.innerHTML += `${error}<br>`);
+            errors[input.name] = errorsForField;
+            return;
+        }
+        delete errors[input.name];
+    };
+
+    const onCheckErrors = (schema, btn) => {
+        
+    }
+
+    const onChangeInputField = (schema, element, btn) => {
+        const { input, errorSpan, validation } = element;
+        onValidateField(input, errorSpan, validation);
+        onCheckErrors(schema, btn);
+    }
 }
 
 export default useForm;
