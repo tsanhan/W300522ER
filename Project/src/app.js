@@ -6,9 +6,23 @@ import {
     LOGIN_PAGE_LINK,
     SLIDER_PREV_BTN,
     SLIDER_NEXT_BTN,
+
+    URL_CREATE_PIC_FIELD,
+    URL_CREATE_PIC_ERROR,
+    SUBMIT_CREATE_PIC_BTN,
+    CANCEL_BTN,
+    ALT_CREATE_PIC_FIELD,
+    CREDIT_CREATE_PIC_FIELD,
+    PRICE_CREATE_PIC_FIELD
 } from "./services/domService.js";
+
+import Picture from "./models/PictureModel.js";
+import useForm from "./services/formService.js";
+
 import PAGES from "./models/pageModel.js";
 import User from "./models/UserModel.js";
+
+
 import { onChangePage } from "./routes/router.js";
 import { renderSlider as render } from "./services/renderSlider.js";
 import { setCounter } from "./services/picService.js";
@@ -29,7 +43,7 @@ let counter = 0;
 render(pictures);
 
 
-//slider logic
+//#region slider logic
 const onChangeSliderPic = controller => {
     counter = setCounter(pictures, counter, controller);
     render(pictures, counter);
@@ -50,4 +64,48 @@ LINK_HOME_PAGE.addEventListener('click', () => onChangePage(PAGES.HOME));
 SLIDER_PREV_BTN.addEventListener('click', () => onChangeSliderPic('prev'));
 SLIDER_NEXT_BTN.addEventListener('click', () => onChangeSliderPic('next'));
 
+//#endregion
+
+
+//#region Create Picture
+
+export const handleCreatePic = () => {
+    // הגענו לדף
+    onChangePage(PAGES.CREATE_PIC);
+
+    // להרשם לאירועי הזנת המידע בשדות
+    createPicFromFieldsListeners();
+
+    CANCEL_BTN.addEventListener('click', () => handleCancelCreatePic);
+    SUBMIT_CREATE_PIC_BTN.addEventListener('click', () => handleSubmitNewPic);
+}
+
+export const createPicFromFieldsListeners = () => {
+    const { onChangeInputField } = useForm();
+    const schema = ['url'];
+    URL_CREATE_PIC_FIELD.addEventListener('input', e => {
+        const validation = {
+            regex: /^http[s]?\:\/\/.{1,}.(jpg|png|jpeg)$/g,
+            min: 10,
+            lowerCase:true
+        };
+
+        const element = {
+            input: e.target,
+            errorSpan: URL_CREATE_PIC_ERROR,
+            validation
+        }
+
+        onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
+    });
+
+    
+
+}
+
+export const handleCancelCreatePic = () => {
+}
+
+export const handleSubmitNewPic = () => {
+}
 //#endregion
