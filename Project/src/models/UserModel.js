@@ -60,7 +60,7 @@ class User {
         const leanLastName = last.replace(rg, "");
         const firstName = makeFirstLetterCapital(leanFirstName);
         const lastName = makeFirstLetterCapital(leanLastName);
-        this.#name = `${firstName} ${lastName}`;
+        return `${firstName} ${lastName}`;
     }
 
     changeBusinessStatus(user) {

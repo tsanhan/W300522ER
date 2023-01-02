@@ -16,8 +16,10 @@ import { setCounter } from "./services/picService.js";
 import initialData from "./initialData/initialData.js";
 
 //#region הגדרת משתנים גלובליים
-let { pictures } = initialData();
+let { pictures, users } = initialData();
 console.log(pictures);
+console.log(users);
+
 let counter = 0;
 
 
@@ -49,9 +51,3 @@ SLIDER_PREV_BTN.addEventListener('click', () => onChangeSliderPic('prev'));
 SLIDER_NEXT_BTN.addEventListener('click', () => onChangeSliderPic('next'));
 
 //#endregion
-
-const user = new User({
-    address: {}
-})
-user.phone = '054-1234567';
-console.log(user.phone);
