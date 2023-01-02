@@ -1,6 +1,8 @@
 import Picture from "../models/PictureModel.js";
 import User from "../models/UserModel.js";
 
+
+
 const initialData = () => {
 
     const data = {
@@ -26,54 +28,54 @@ const initialData = () => {
         ],
         users: [
             {
-              "name": { "first": "regular", "last": "user" },
-              "address": {
-                "state": "USA",
-                "country": "big",
-                "city": "New York",
-                "street": "52",
-                "houseNumber": "109",
-                "zip": 562145
-              },
-              "phone": "050-0000000",
-              "email": "user@gmail.com",
-              "password": "Aa1234!",
-              "isBusiness": false
+                "name": { "first": "regular", "last": "user" },
+                "address": {
+                    "state": "USA",
+                    "country": "big",
+                    "city": "New York",
+                    "street": "52",
+                    "houseNumber": "109",
+                    "zip": 562145
+                },
+                "phone": "050-0000000",
+                "email": "user@gmail.com",
+                "password": "Aa1234!",
+                "isBusiness": false
             },
             {
-              "name": { "first": "bUsiness", "last": "user" },
-              "address": {
-                "state": "USA",
-                "country": "cal",
-                "city": "New Jersey",
-                "street": "bird",
-                "houseNumber": "54",
-                "zip": 123456
-              },
-              "phone": "050-0000000",
-              "email": "business@gmail.com",
-              "password": "Aa1234!",
-              "isBusiness": true,
-              "isAdmin": false
+                "name": { "first": "bUsiness", "last": "user" },
+                "address": {
+                    "state": "USA",
+                    "country": "cal",
+                    "city": "New Jersey",
+                    "street": "bird",
+                    "houseNumber": "54",
+                    "zip": 123456
+                },
+                "phone": "050-0000000",
+                "email": "business@gmail.com",
+                "password": "Aa1234!",
+                "isBusiness": true,
+                "isAdmin": false
             },
             {
-              "name": { "first": "admin", "last": "user" },
-              "address": {
-                "state": "Israel",
-                "country": "Israel",
-                "city": "Tel Aviv",
-                "street": "il",
-                "houseNumber": "24",
-                "zip": 4444556
-              },
-              "phone": "050-0000000",
-              "email": "admin@gmail.com",
-              "password": "Aa1234!",
-              "isBusiness": true,
-              "isAdmin": true
+                "name": { "first": "admin", "last": "user" },
+                "address": {
+                    "state": "Israel",
+                    "country": "Israel",
+                    "city": "Tel Aviv",
+                    "street": "il",
+                    "houseNumber": "24",
+                    "zip": 4444556
+                },
+                "phone": "050-0000000",
+                "email": "admin@gmail.com",
+                "password": "Aa1234!",
+                "isBusiness": true,
+                "isAdmin": true
             }
-          ]
-        
+        ]
+
     }
     const pictures = data.pictures.map(pic => new Picture(pic, data.pictures));
     const users = data.users.map(user => new User(user));
