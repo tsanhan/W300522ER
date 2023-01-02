@@ -104,7 +104,7 @@
                 </div>
             </div>
             <div class="center">
-                <form  class="col-12 col-md-10 col-xl-8 border p-2 rounded">
+                <form class="col-12 col-md-10 col-xl-8 border p-2 rounded">
                     <div>
                         <label for="url-field">url</label>
                         <input 
@@ -115,6 +115,55 @@
                             minlength="2" />
                         <span id="url-error-span" class="text-danger"></span>
                     </div>
+
+                    <!--create fields for: url, alt, credit, price  -->
+                    <div>
+                        <label for="alt-field">alt</label>
+                        <input 
+                            type="text"
+                            class="form-control mb-2" 
+                            name="alt"
+                            id="alt-field"
+                            minlength="2" />
+                        <span id="alt-error-span" class="text-danger"></span>
+                    </div>
+                    
+                    <div>
+                        <label for="credit-field">Credit</label>
+                        <input 
+                            type="text"
+                            class="form-control mb-2" 
+                            name="credit"
+                            id="credit-field"
+                            minlength="2" />
+                        <span id="credit-error-span" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label for="price-field">price</label>
+                        <input 
+                            type="number"
+                            class="form-control mb-2" 
+                            name="price"
+                            id="price-field"
+                            minlength="2" />
+                        <span id="price-error-span" class="text-danger"></span>
+                    </div>
+                    
+                    <input 
+                        type="button" 
+                        id="submit-create-pic-btn"
+                        value="Submit"
+                        class="btn btn-primary col-12 mb-2" />
+                    <input 
+                        type="button" 
+                        id="cancel-create-pic-btn"
+                        value="Cancel"
+                        class="btn btn-outline-danger col-12 mb-2" />
+
+
+                   
+
+
                 </form>
             </div>
         </div>
