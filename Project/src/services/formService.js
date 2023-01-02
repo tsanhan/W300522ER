@@ -62,13 +62,36 @@ const useForm = () => {
     };
 
     const onCheckErrors = (schema, btn) => {
-        
+        const isArrayEmpty = schema.filter(key => !data[key]);
+        if(isArrayEmpty.length) return btn.setAttribute('disabled', 'disabled');
+        const keys = Object.keys(errors);
+        if(keys.length) return btn.setAttribute('disabled', 'disabled');
+
+        btn.removeAttribute('disabled');
+        return;
     }
 
     const onChangeInputField = (schema, element, btn) => {
         const { input, errorSpan, validation } = element;
         onValidateField(input, errorSpan, validation);
         onCheckErrors(schema, btn);
+    }
+
+    const onClearFormFields = (btn, fields, errorSpans) => {
+        fields.forEach(field => {
+            field.removeEventListener('input', onChangeInputField);
+            field.value = '';
+        });
+        errorSpans.forEach(span => span.innerHTML = '');
+        btn.setAttribute('disabled', 'disabled');
+        errors = {};
+        data = {};
+    }
+
+    return {
+        onCheckErrors,
+        onChangeInputField,
+        onClearFormFields,
     }
 }
 
