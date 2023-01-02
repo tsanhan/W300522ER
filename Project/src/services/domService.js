@@ -31,5 +31,15 @@ export const SLIDER_NEXT_BTN = document.querySelector('#slider-next-btn')
 //#endregion
 
 //#region create pic form
+export const URL_CREATE_PIC_FIELD = document.querySelector('#url-field');
+export const URL_CREATE_PIC_ERROR = document.querySelector('#url-error-span');
+export const ALT_CREATE_PIC_FIELD = document.querySelector('#alt-field');
+export const ALT_CREATE_PIC_ERROR = document.querySelector('#alt-error-span');
+export const CREDIT_CREATE_PIC_FIELD = document.querySelector('#credit-field');
+export const CREDIT_CREATE_PIC_ERROR = document.querySelector('#credit-error-span');
+export const PRICE_CREATE_PIC_FIELD = document.querySelector('#price-field');
+export const PRICE_CREATE_PIC_ERROR = document.querySelector('#price-error-span');
 
+export const SUBMIT_CREATE_PIC_BTN = document.querySelector('#submit-create-pic-btn');
+export const CANCEL_BTN = document.querySelector('#cancel-create-pic-btn');
 //#endregion
