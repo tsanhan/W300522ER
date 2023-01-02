@@ -49,12 +49,6 @@ class User {
         this.#createdAt = new Date();
     }
 
-    // generateId(array) {
-    //     const random = randomNumBetween(1_000_000, 9_999_999);
-    //     const user = array.find(usr => usr._id === random);
-    //     if (!user) return this.#id = random;
-    //     this.generateId(array);
-    // }
 
     get _id() {
         return this.#id;

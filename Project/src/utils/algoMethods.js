@@ -9,5 +9,8 @@ export const makeFirstLetterCapital = (string) => {
 }
 
 export const generateUniqNumber = (array, key) => {
-    // fill this function
+    const random = randomNumBetween(1_000_000, 9_999_999);
+    const item = array.find(item => item[key] === random);
+    if(!item) return random;
+    return generateUniqNumber(array, key);
 }
