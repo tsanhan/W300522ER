@@ -29,3 +29,7 @@ export const SLIDER_PREV_BTN = document.querySelector('#slider-prev-btn')
 export const SLIDER_NEXT_BTN = document.querySelector('#slider-next-btn')
 
 //#endregion
+
+//#region create pic form
+
+//#endregion

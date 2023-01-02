@@ -75,8 +75,8 @@ const initialData = () => {
                 "isAdmin": true
             }
         ]
-
     }
+    
     const pictures = data.pictures.map(pic => new Picture(pic, data.pictures));
     const users = data.users.map(user => new User(user));
 
