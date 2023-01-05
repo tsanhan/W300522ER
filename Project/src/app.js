@@ -13,7 +13,8 @@ import {
     CANCEL_BTN,
     ALT_CREATE_PIC_FIELD,
     CREDIT_CREATE_PIC_FIELD,
-    PRICE_CREATE_PIC_FIELD
+    PRICE_CREATE_PIC_FIELD,
+    PRICE_CREATE_PIC_ERROR
 } from "./services/domService.js";
 
 import Picture from "./models/PictureModel.js";
@@ -56,7 +57,7 @@ const onChangeSliderPic = controller => {
 // ניתוב דפים
 HOME_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.HOME));
 ABOUT_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.ABOUT));
-CREATE_PIC_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.CREATE_PIC));
+CREATE_PIC_PAGE_LINK.addEventListener('click', () => handleCreatePic());
 LOGIN_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.LOGIN));
 LINK_HOME_PAGE.addEventListener('click', () => onChangePage(PAGES.HOME));
 
@@ -82,7 +83,7 @@ export const handleCreatePic = () => {
 
 export const createPicFromFieldsListeners = () => {
     const { onChangeInputField } = useForm();
-    const schema = ['url'];
+    const schema = ['url','price'];
     URL_CREATE_PIC_FIELD.addEventListener('input', e => {
         const validation = {
             regex: /^http[s]?\:\/\/.{1,}.(jpg|png|jpeg)$/g,
@@ -98,6 +99,23 @@ export const createPicFromFieldsListeners = () => {
 
         onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
     });
+
+
+    PRICE_CREATE_PIC_FIELD.addEventListener('input', e => {
+        const validation = {
+            regex: /^\d+$/,
+            numMin: 100
+        };
+
+        const element = {
+            input: e.target,
+            errorSpan: PRICE_CREATE_PIC_ERROR,
+            validation
+        };
+
+        onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
+    });
+
 
     
 

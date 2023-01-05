@@ -11,9 +11,25 @@ const useForm = () => {
             max = 1_000_000_000_000,
             upperCase = null,
             lowerCase = null,
+            numMin = 0,
+            numMax = 1_000_000_000_000,
         } = validation;
 
         const { value: input } = field;
+
+
+        if (+input < +numMin) {
+            errors.push(`The field must be at least ${numMin}`);
+        }
+
+
+
+        if (+input > +numMax) {
+            errors.push(`The field cannot be more then ${numMax}`);
+        }
+
+
+
 
         if (input.length < +min) {
             errors.push(`The field must have at least ${min} characters long`);
@@ -63,9 +79,9 @@ const useForm = () => {
 
     const onCheckErrors = (schema, btn) => {
         const isArrayEmpty = schema.filter(key => !data[key]);
-        if(isArrayEmpty.length) return btn.setAttribute('disabled', 'disabled');
+        if (isArrayEmpty.length) return btn.setAttribute('disabled', 'disabled');
         const keys = Object.keys(errors);
-        if(keys.length) return btn.setAttribute('disabled', 'disabled');
+        if (keys.length) return btn.setAttribute('disabled', 'disabled');
 
         btn.removeAttribute('disabled');
         return;
