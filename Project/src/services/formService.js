@@ -85,13 +85,13 @@ const useForm = () => {
 
         btn.removeAttribute('disabled');
         return;
-    }
+    };
 
     const onChangeInputField = (schema, element, btn) => {
         const { input, errorSpan, validation } = element;
         onValidateField(input, errorSpan, validation);
         onCheckErrors(schema, btn);
-    }
+    };
 
     const onClearFormFields = (btn, fields, errorSpans) => {
         fields.forEach(field => {
@@ -102,7 +102,7 @@ const useForm = () => {
         btn.setAttribute('disabled', 'disabled');
         errors = {};
         data = {};
-    }
+    };
 
     return {
         onCheckErrors,
