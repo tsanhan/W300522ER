@@ -16,9 +16,9 @@ export const setCounter = (array, counter, controller = "") => {
         newCounter = counter > 0 ? counter - 1 : array.length - 1;
         return newCounter;
     }
-    
+
     return 0;
-}
+};
 
 
 export const handleCreatePic = () => {
@@ -28,13 +28,17 @@ export const handleCreatePic = () => {
     // להרשם לאירועי הזנת המידע בשדות
     createPicFromFieldsListeners();
 
-    CANCEL_BTN.addEventListener('click', () => {
+    const cancelEH = () => {
         const conf = confirm('Are you sure you want to cancel?')
         if (conf) handleCancelCreatePic()
-    });
+    }
+    
+    CANCEL_BTN.removeEventListener('click', cancelEH);
+    CANCEL_BTN.addEventListener('click', cancelEH);
 
-    SUBMIT_CREATE_PIC_BTN.addEventListener('click', () => handleSubmitNewPic());
-}
+    SUBMIT_CREATE_PIC_BTN.removeEventListener('click', handleSubmitNewPic);
+    SUBMIT_CREATE_PIC_BTN.addEventListener('click', handleSubmitNewPic);
+};
 
 export const createPicFromFieldsListeners = () => {
     const { onChangeInputField } = useForm();
@@ -70,14 +74,16 @@ export const createPicFromFieldsListeners = () => {
 
         onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
     });
-}
+};
+
 export const handleCancelCreatePic = () => {
     const { onClearFormFields } = useForm();
     const fields = [URL_CREATE_PIC_FIELD, ALT_CREATE_PIC_FIELD, CREDIT_CREATE_PIC_FIELD, PRICE_CREATE_PIC_FIELD];
     const errorSpans = [URL_CREATE_PIC_ERROR, ALT_CREATE_PIC_ERROR, CREDIT_CREATE_PIC_ERROR, PRICE_CREATE_PIC_ERROR];
     onClearFormFields(SUBMIT_CREATE_PIC_BTN, fields, errorSpans);
     onChangePage(PAGES.HOME);
-}
+};
+
 export const onCreateNewPic = pictures => {
     try {
         let newArray = [...pictures];
@@ -86,7 +92,7 @@ export const onCreateNewPic = pictures => {
             alt: ALT_CREATE_PIC_FIELD.value,
             credit: CREDIT_CREATE_PIC_FIELD.value,
             price: PRICE_CREATE_PIC_FIELD.value
-        },newArray);
+        }, newArray);
         newArray.push(pic);
 
         return newArray;
