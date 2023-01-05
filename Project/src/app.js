@@ -14,7 +14,9 @@ import {
     ALT_CREATE_PIC_FIELD,
     CREDIT_CREATE_PIC_FIELD,
     PRICE_CREATE_PIC_FIELD,
-    PRICE_CREATE_PIC_ERROR
+    PRICE_CREATE_PIC_ERROR,
+    ALT_CREATE_PIC_ERROR,
+    CREDIT_CREATE_PIC_ERROR
 } from "./services/domService.js";
 
 import Picture from "./models/PictureModel.js";
@@ -77,18 +79,18 @@ export const handleCreatePic = () => {
     // להרשם לאירועי הזנת המידע בשדות
     createPicFromFieldsListeners();
 
-    CANCEL_BTN.addEventListener('click', () => handleCancelCreatePic);
-    SUBMIT_CREATE_PIC_BTN.addEventListener('click', () => handleSubmitNewPic);
+    CANCEL_BTN.addEventListener('click', () => handleCancelCreatePic());
+    SUBMIT_CREATE_PIC_BTN.addEventListener('click', () => handleSubmitNewPic());
 }
 
 export const createPicFromFieldsListeners = () => {
     const { onChangeInputField } = useForm();
-    const schema = ['url','price'];
+    const schema = ['url', 'price'];
     URL_CREATE_PIC_FIELD.addEventListener('input', e => {
         const validation = {
             regex: /^http[s]?\:\/\/.{1,}.(jpg|png|jpeg)$/g,
             min: 10,
-            lowerCase:true
+            lowerCase: true
         };
 
         const element = {
@@ -115,13 +117,16 @@ export const createPicFromFieldsListeners = () => {
 
         onChangeInputField(schema, element, SUBMIT_CREATE_PIC_BTN);
     });
-
-
-    
-
 }
 
 export const handleCancelCreatePic = () => {
+    const { onClearFormFields } = useForm();
+    const fields = [URL_CREATE_PIC_FIELD, ALT_CREATE_PIC_FIELD, CREDIT_CREATE_PIC_FIELD, PRICE_CREATE_PIC_FIELD];
+    const errorSpans = [URL_CREATE_PIC_ERROR, ALT_CREATE_PIC_ERROR, CREDIT_CREATE_PIC_ERROR, PRICE_CREATE_PIC_ERROR];
+    const RUSure = confirm('Are you sure you want to cancel?');
+    if (!RUSure) return;
+    onClearFormFields(SUBMIT_CREATE_PIC_BTN, fields, errorSpans);
+    onChangePage(PAGES.HOME);
 }
 
 export const handleSubmitNewPic = () => {
