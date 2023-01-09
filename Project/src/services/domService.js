@@ -47,6 +47,7 @@ export const CANCEL_BTN = document.querySelector('#cancel-create-pic-btn');
 //#endregion
 
 //#region Signup form
+
 export const FIRST_SIGNUP_FIELD = document.querySelector('#first-name-signup-field');
 export const FIRST_SIGNUP_ERROR = document.getElementById(
     "first-name-signup-error-span"
@@ -113,3 +114,20 @@ export const CANCEL_BTN_SIGNUP = document.getElementById(
     "cancel-signup-user-btn"
 );
 //#endregion
+
+
+//#region login form
+export const EMAIL_LOGIN_FIELD = document.getElementById("login-email");
+export const EMAIL_LOGIN_ERROR = document.getElementById("login-email-error");
+export const PASSWORD_LOGIN_FIELD = document.getElementById("login-password");
+export const PASSWORD_LOGIN_ERROR = document.getElementById(
+    "login-password-error"
+);
+export const SUBMIT_LOGIN_BTN = document.getElementById("submit-login-btn");
+export const CANCEL_LOGIN_BTN = document.getElementById("cancel-login-btn");
+
+export const LINK_TO_SIGNUP_PAGE = document.getElementById(
+    "link-to-signup-page"
+);//#endregion
+
+

@@ -2,8 +2,9 @@ import { handleSubmitSignup } from "../app.js"
 import PAGES from "../models/pageModel.js"
 import User from "../models/UserModel.js"
 import { onChangePage } from "../routes/router.js"
-import { BIZ_SIGNUP_FIELD, CANCEL_BTN_SIGNUP, CITY_SIGNUP_ERROR, CITY_SIGNUP_FIELD, COUNTRY_SIGNUP_ERROR, COUNTRY_SIGNUP_FIELD, EMAIL_SIGNUP_ERROR, EMAIL_SIGNUP_FIELD, FIRST_SIGNUP_ERROR, FIRST_SIGNUP_FIELD, HOUSE_SIGNUP_ERROR, HOUSE_SIGNUP_FIELD, LAST_SIGNUP_ERROR, LAST_SIGNUP_FIELD, PASSWORD_RE_ENTER_SIGNUP_ERROR, PASSWORD_RE_ENTER_SIGNUP_FIELD, PASSWORD_SIGNUP_ERROR, PASSWORD_SIGNUP_FIELD, PHONE_SIGNUP_ERROR, PHONE_SIGNUP_FIELD, STATE_SIGNUP_ERROR, STATE_SIGNUP_FIELD, STREET_SIGNUP_ERROR, STREET_SIGNUP_FIELD, SUBMIT_BTN_SIGNUP, ZIP_SIGNUP_ERROR, ZIP_SIGNUP_FIELD } from "./domService.js"
+import { BIZ_SIGNUP_FIELD, CANCEL_BTN_SIGNUP, CANCEL_LOGIN_BTN, CITY_SIGNUP_ERROR, CITY_SIGNUP_FIELD, COUNTRY_SIGNUP_ERROR, COUNTRY_SIGNUP_FIELD, EMAIL_LOGIN_ERROR, EMAIL_LOGIN_FIELD, EMAIL_SIGNUP_ERROR, EMAIL_SIGNUP_FIELD, FIRST_SIGNUP_ERROR, FIRST_SIGNUP_FIELD, HOUSE_SIGNUP_ERROR, HOUSE_SIGNUP_FIELD, LAST_SIGNUP_ERROR, LAST_SIGNUP_FIELD, PASSWORD_LOGIN_ERROR, PASSWORD_LOGIN_FIELD, PASSWORD_RE_ENTER_SIGNUP_ERROR, PASSWORD_RE_ENTER_SIGNUP_FIELD, PASSWORD_SIGNUP_ERROR, PASSWORD_SIGNUP_FIELD, PHONE_SIGNUP_ERROR, PHONE_SIGNUP_FIELD, STATE_SIGNUP_ERROR, STATE_SIGNUP_FIELD, STREET_SIGNUP_ERROR, STREET_SIGNUP_FIELD, SUBMIT_BTN_SIGNUP, SUBMIT_LOGIN_BTN, ZIP_SIGNUP_ERROR, ZIP_SIGNUP_FIELD } from "./domService.js"
 import useForm from "./formService.js"
+import { setItemInLocalStorage } from "./localStorageService.js"
 
 export const handleSignup = () => {
     onChangePage(PAGES.SIGN_UP)
@@ -12,7 +13,6 @@ export const handleSignup = () => {
     CANCEL_BTN_SIGNUP.removeEventListener("click", handleCancelSignup);
     CANCEL_BTN_SIGNUP.addEventListener("click", handleCancelSignup);
 
-
     SUBMIT_BTN_SIGNUP.removeEventListener("click", handleSubmitSignup);
     SUBMIT_BTN_SIGNUP.addEventListener("click", handleSubmitSignup);
 }
@@ -20,24 +20,24 @@ export const handleSignup = () => {
 export const onSignupNewUser = (users) => {
     const newArray = [...users]
     const user =
-        {
-            name: {
-                first: FIRST_SIGNUP_FIELD.value,
-                last: LAST_SIGNUP_FIELD.value
-            },
-            address: {
-                state: STATE_SIGNUP_FIELD.value ?? "",
-                country: COUNTRY_SIGNUP_FIELD.value ?? "",
-                city: CITY_SIGNUP_FIELD.value ?? "",
-                street: STREET_SIGNUP_FIELD.value ?? "",
-                houseNumber: HOUSE_SIGNUP_FIELD.value ?? "",
-                zip: ZIP_SIGNUP_FIELD.value ?? ""
-            },
-            phone: PHONE_SIGNUP_FIELD.value ?? "050-0000000",
-            email: EMAIL_SIGNUP_FIELD.value ?? "someone@someware.com",
-            password: PASSWORD_SIGNUP_FIELD.value ?? "1234Az$",
-            isBusiness: !!BIZ_SIGNUP_FIELD.checked
-        };
+    {
+        name: {
+            first: FIRST_SIGNUP_FIELD.value,
+            last: LAST_SIGNUP_FIELD.value
+        },
+        address: {
+            state: STATE_SIGNUP_FIELD.value ?? "",
+            country: COUNTRY_SIGNUP_FIELD.value ?? "",
+            city: CITY_SIGNUP_FIELD.value ?? "",
+            street: STREET_SIGNUP_FIELD.value ?? "",
+            houseNumber: HOUSE_SIGNUP_FIELD.value ?? "",
+            zip: ZIP_SIGNUP_FIELD.value ?? ""
+        },
+        phone: PHONE_SIGNUP_FIELD.value ?? "050-0000000",
+        email: EMAIL_SIGNUP_FIELD.value ?? "someone@someware.com",
+        password: PASSWORD_SIGNUP_FIELD.value ?? "1234Az$",
+        isBusiness: !!BIZ_SIGNUP_FIELD.checked
+    };
     const newUser = new User(user, newArray);
     newArray.push(newUser);
     console.log("newArray", newArray);
@@ -243,4 +243,66 @@ const createUserListeners = () => {
         )
     );
 
+}
+
+export const handleLogin = () => {
+    onChangePage(PAGES.LOGIN);
+    loginUserListeners();
+
+    CANCEL_LOGIN_BTN.removeEventListener("click", handleCancelLogin);
+    CANCEL_LOGIN_BTN.addEventListener("click", handleCancelLogin);
+
+    // SUBMIT_LOGIN_BTN.removeEventListener("click", handleSubmitLogin);
+    // SUBMIT_LOGIN_BTN.addEventListener("click", handleSubmitLogin);
+}
+
+const loginUserListeners = () => {
+    const schema = ["login-email", "login-password"];
+
+    EMAIL_LOGIN_FIELD.addEventListener("input", e => {
+        onChangeInputField(schema, {
+            input: e.target,
+            errorSpan: EMAIL_LOGIN_ERROR,
+            validation: { min: 2 },
+        }, SUBMIT_LOGIN_BTN)
+    });
+
+    PASSWORD_LOGIN_FIELD.addEventListener("input", e => {
+        onChangeInputField(schema, {
+            input: e.target,
+            errorSpan: PASSWORD_LOGIN_ERROR,
+            validation: { min: 2 },
+        }, SUBMIT_LOGIN_BTN)
+    });
+};
+
+export const handleCancelLogin = () => {
+    const fields = [EMAIL_LOGIN_FIELD, PASSWORD_LOGIN_FIELD];
+    const errorSpans = [EMAIL_LOGIN_ERROR, PASSWORD_LOGIN_ERROR];
+    onClearFormFields(SUBMIT_LOGIN_BTN, fields, errorSpans);
+    onChangePage(PAGES.HOME);
+};
+
+export const onLogin = (email, password, users = []) => {
+    if (!users.length) throw new Error("You are not registered, please sign up");
+    const user = users.find(user => user.email === email);
+
+    if (!user) {
+        PASSWORD_LOGIN_ERROR.textContent = "User mail or password is incorrect";
+        throw new Error("User mail or password is incorrect");
+    }
+
+    if (user.password !== password) {
+        PASSWORD_LOGIN_ERROR.textContent = "User mail or password is incorrect";
+        throw new Error("User mail or password is incorrect");
+    }
+
+    const { _id, isBusiness, isAdmin } = user;
+
+    const payload = JSON.stringify({ _id, isBusiness, isAdmin });
+
+    setItemInLocalStorage("user", payload);
+    handleCancelLogin();
+
+    
 }

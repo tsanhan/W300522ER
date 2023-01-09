@@ -145,137 +145,171 @@
                     <hr />
                 </div>
             </div>
-        </div>
+            <div class="center h50">
+                <form class="col-12 col-md-6 col-xl-4 bg-light border p-3 rounded">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="login-email">Email <span class="text-danger">*</span>
+                            </label>
+                            <input placeholder="user@gmail.com" id="login-email" class="form-control" name="login-email"
+                                type="email" autocomplete="off" />
+                            <span id="login-email-error" class="text-danger"></span>
 
-        <!-- דף הרשמה -->
-        <div id="signup-page" class="d-none">
-            <div class="bg-light">
-                <!-- הכותרת של דף הבית -->
-                <div class="center pt-4">
-                    <div class="col-12 col-md-10 col-xl-8">
-                        <h1 class="text-center display-4">SIGNUP PAGE</h1>
-                        <h2 class="fs-5">Signup and start like buy and add pictures</h2>
-                        <hr />
+                        </div>
+                        <div class="col-12">
+                            <label for="login-password">Password <span class="text-danger">*</span>
+                            </label>
+                            <input placeholder="enter password" id="login-password" class="form-control"
+                                name="login-password" type="password" autocomplete="off" />
+                            <span id="login-password-error" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 my-1">
+                            Not registered yet?
+                            <span id="link-to-signup-page" class="text-primary cursor">Click here...</span>
+                        </div>
+                        <div class="col-12">
+                            <input id="submit-login-btn" type="button" class="btn btn-primary col-12 my-2" value="Login"
+                                disabled />
+
+                            <input type="button" class="btn btn-danger col-12 mb-2" value="Cancel"
+                                id="cancel-login-btn" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- דף הרשמה -->
+            <div id="signup-page" class="d-none">
+                <div class="bg-light">
+                    <!-- הכותרת של דף הבית -->
+                    <div class="center pt-4">
+                        <div class="col-12 col-md-10 col-xl-8">
+                            <h1 class="text-center display-4">SIGNUP PAGE</h1>
+                            <h2 class="fs-5">Signup and start like buy and add pictures</h2>
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="center">
+                        <form class="form col-12 col-md-10 col-xl-8 border p-2 rounded">
+                            <h6>Name</h6>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="first-name-signup-field">First Name <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control mb-2" name="first"
+                                        id="first-name-signup-field" minlength="2" autocomplete="off" />
+                                    <span id="first-name-signup-error-span" class="text-danger"></span>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="last-name-signup-field">Last Name <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control mb-2" name="last" id="last-name-signup-field"
+                                        minlength="2" autocomplete="off" />
+                                    <span id="last-name-signup-error-span" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <h6>Address</h6>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <label for="state-signup-field">State <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control mb-2" name="state" id="state-signup-field"
+                                        minlength="2" autocomplete="off" />
+                                    <span id="state-signup-error-span" class="text-danger"></span>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <label for="country-signup-field">Country <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control mb-2" name="country"
+                                        id="country-signup-field" minlength="2" autocomplete="off" />
+                                    <span id="country-signup-error-span" class="text-danger"></span>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <label for="city-signup-field">City</label>
+                                    <input autocomplete="off" class="form-control mb-2" type="text" name="city"
+                                        id="city-signup-field" />
+                                    <span id="city-signup-error-span" class="text-danger"></span>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <label for="street-signup-field">Street</label>
+                                    <input autocomplete="off" class="form-control mb-2" type="text" name="street"
+                                        id="street-signup-field" />
+                                    <span id="street-signup-error-span" class="text-danger"></span>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <label for="house-signup-field">House Number</label>
+                                    <input autocomplete="off" class="form-control mb-2" type="number" name="house"
+                                        id="house-signup-field" />
+                                    <span id="house-signup-error-span" class="text-danger"></span>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <label for="zip-signup-field">Zip Code</label>
+                                    <input autocomplete="off" class="form-control mb-2" type="number" name="zip"
+                                        id="zip-signup-field" />
+                                    <span id="zip-signup-error-span" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <h6>Means of contact</h6>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="email-signup-field">Email<span class="text-danger">*</span></label>
+                                    <input autocomplete="off" class="form-control mb-2" type="text" name="email"
+                                        id="email-signup-field" minlength="2" />
+                                    <span id="email-signup-error-span" class="text-danger"></span>
+
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="phone-signup-field">Phone</label>
+                                    <input autocomplete="off" class="form-control mb-2" type="text" name="phone"
+                                        id="phone-signup-field" />
+                                    <span id="phone-signup-error-span" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <h6>Security</h6>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="password-signup-field">Password<span
+                                            class="text-danger">*</span></label>
+                                    <input autocomplete="off" class="form-control mb-2" type="password" name="password"
+                                        id="password-signup-field" minlength="2" />
+                                    <span id="password-signup-error-span" class="text-danger"></span>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="password-reenter-signup-field">Re-enter Password<span
+                                            class="text-danger">*</span></label>
+                                    <input autocomplete="off" class="form-control mb-2" type="password"
+                                        name="passwordReEnter" id="password-reenter-signup-field" minlength="2" />
+                                    <span id="password-reenter-signup-error-span" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="center my-2">
+                                <div>
+                                    <label for="isBiz-signup-field">Business Client</label>
+                                    <input autocomplete="off" class="form-check-inline mb-2" type="checkbox"
+                                        name="isBiz" id="isBiz-signup-field" />
+                                </div>
+                            </div>
+                            <input type="button" id="submit-signup-user-btn" value="Submit"
+                                class="btn btn-primary col-12 mb-2" disabled />
+                            <input type="button" id="cancel-signup-user-btn" value="Cancel"
+                                class="btn btn-outline-danger col-12 mb-2" />
+                        </form>
                     </div>
                 </div>
+            </div>
 
-                <div class="center">
-                    <form class="form col-12 col-md-10 col-xl-8 border p-2 rounded">
-                        <h6>Name</h6>
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <label for="first-name-signup-field">First Name <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" class="form-control mb-2" name="first" id="first-name-signup-field"
-                                    minlength="2" autocomplete="off" />
-                                <span id="first-name-signup-error-span" class="text-danger"></span>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label for="last-name-signup-field">Last Name <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" class="form-control mb-2" name="last" id="last-name-signup-field"
-                                    minlength="2" autocomplete="off" />
-                                <span id="last-name-signup-error-span" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <h6>Address</h6>
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <label for="state-signup-field">State <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control mb-2" name="state" id="state-signup-field"
-                                    minlength="2" autocomplete="off" />
-                                <span id="state-signup-error-span" class="text-danger"></span>
-                            </div>
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <label for="country-signup-field">Country <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control mb-2" name="country" id="country-signup-field"
-                                    minlength="2" autocomplete="off" />
-                                <span id="country-signup-error-span" class="text-danger"></span>
-                            </div>
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <label for="city-signup-field">City</label>
-                                <input autocomplete="off" class="form-control mb-2" type="text" name="city"
-                                    id="city-signup-field" />
-                                <span id="city-signup-error-span" class="text-danger"></span>
-                            </div>
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <label for="street-signup-field">Street</label>
-                                <input autocomplete="off" class="form-control mb-2" type="text" name="street"
-                                    id="street-signup-field" />
-                                <span id="street-signup-error-span" class="text-danger"></span>
-                            </div>
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <label for="house-signup-field">House Number</label>
-                                <input autocomplete="off" class="form-control mb-2" type="number" name="house"
-                                    id="house-signup-field" />
-                                <span id="house-signup-error-span" class="text-danger"></span>
-                            </div>
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <label for="zip-signup-field">Zip Code</label>
-                                <input autocomplete="off" class="form-control mb-2" type="number" name="zip"
-                                    id="zip-signup-field" />
-                                <span id="zip-signup-error-span" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <h6>Means of contact</h6>
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <label for="email-signup-field">Email<span class="text-danger">*</span></label>
-                                <input autocomplete="off" class="form-control mb-2" type="text" name="email"
-                                    id="email-signup-field" minlength="2" />
-                                <span id="email-signup-error-span" class="text-danger"></span>
 
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label for="phone-signup-field">Phone</label>
-                                <input autocomplete="off" class="form-control mb-2" type="text" name="phone"
-                                    id="phone-signup-field" />
-                                <span id="phone-signup-error-span" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <h6>Security</h6>
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <label for="password-signup-field">Password<span class="text-danger">*</span></label>
-                                <input autocomplete="off" class="form-control mb-2" type="password" name="password"
-                                    id="password-signup-field" minlength="2" />
-                                <span id="password-signup-error-span" class="text-danger"></span>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label for="password-reenter-signup-field">Re-enter Password<span
-                                        class="text-danger">*</span></label>
-                                <input autocomplete="off" class="form-control mb-2" type="password"
-                                    name="passwordReEnter" id="password-reenter-signup-field" minlength="2" />
-                                <span id="password-reenter-signup-error-span" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="center my-2">
-                            <div>
-                                <label for="isBiz-signup-field">Business Client</label>
-                                <input autocomplete="off" class="form-check-inline mb-2" type="checkbox" name="isBiz"
-                                    id="isBiz-signup-field" />
-                            </div>
-                        </div>
-                        <input type="button" id="submit-signup-user-btn" value="Submit"
-                            class="btn btn-primary col-12 mb-2" disabled />
-                        <input type="button" id="cancel-signup-user-btn" value="Cancel"
-                            class="btn btn-outline-danger col-12 mb-2" />
-                    </form>
+            <!-- דף שגיאה 404 -->
+            <div id="error-404-page" class="d-none">
+                <!-- הכותרת של דף הבית -->
+                <div class="center mt-4">
+                    <div class="col-12 col-md-10 col-xl-8">
+                        <h1 id="about-page-title" class="text-center display-4">ERROR 404</h1>
+                        <h2 id="about-page-subtitle" class="fs-5">Page not found</h2>
+                        <hr />
+                        <p id="return-to-home-page-link" class="cursor text-primary">click to return to home page</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- דף שגיאה 404 -->
-        <div id="error-404-page" class="d-none">
-            <!-- הכותרת של דף הבית -->
-            <div class="center mt-4">
-                <div class="col-12 col-md-10 col-xl-8">
-                    <h1 id="about-page-title" class="text-center display-4">ERROR 404</h1>
-                    <h2 id="about-page-subtitle" class="fs-5">Page not found</h2>
-                    <hr />
-                    <p id="return-to-home-page-link" class="cursor text-primary">click to return to home page</p>
-                </div>
-            </div>
-        </div>
 
     </main>
     <footer class="border-top pt-3 bg-dark center">

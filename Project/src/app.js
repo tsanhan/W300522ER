@@ -32,7 +32,7 @@ import { renderSlider as render } from "./services/renderSlider.js";
 import { handleCancelCreatePic, handleCreatePic, onCreateNewPic, setCounter } from "./services/picService.js";
 
 import initialData from "./initialData/initialData.js";
-import { handleSignup, onSignupNewUser, handleCancelSignup } from "./services/userService.js";
+import { handleSignup, onSignupNewUser, handleCancelSignup, handleLogin } from "./services/userService.js";
 
 //#region הגדרת משתנים גלובליים
 let { pictures, users } = initialData();
@@ -62,8 +62,8 @@ const onChangeSliderPic = controller => {
 HOME_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.HOME));
 ABOUT_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.ABOUT));
 CREATE_PIC_PAGE_LINK.addEventListener('click', () => handleCreatePic());
-LOGIN_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.LOGIN));
-SIGNUP_PAGE_LINK.addEventListener('click', handleSignup );
+LOGIN_PAGE_LINK.addEventListener('click', handleLogin);
+SIGNUP_PAGE_LINK.addEventListener('click', handleSignup);
 LINK_HOME_PAGE.addEventListener('click', () => onChangePage(PAGES.HOME));
 
 // מצגת תמונות
