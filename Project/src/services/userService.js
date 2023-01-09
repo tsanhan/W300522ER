@@ -213,7 +213,7 @@ const createUserListeners = () => {
                 validation: {
                     regex: {
                         regex:
-                            /((?=.*\d{1})(?=.*[A-Z]{1})(?=.*[a-z]{1})(?=.*[!@#$%^&*-]{1}).{7,20})/g,
+                            /(?=.*\d{1})(?=.*\d{1})(?=.*\d{1})(?=.*\d{1})(?=.*[A-Z]{1})(?=.*[a-z]{1})(?=.*[!@#$%^&*-]{1}).{7,20}/g,
                         message:
                             "The password must include at least six characters uppercase and lowercase letter number and one of the following special characters: !@#$%^&*-",
                     },

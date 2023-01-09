@@ -53,7 +53,12 @@ const useForm = () => {
         }
 
         if (regex) {
-            if (!input.match(regex)) {
+            if(typeof regex === 'object'){
+                if(!input.match(regex.regex)){
+                    errors.push(regex.message);
+                }
+            }
+            else if (!input.match(regex)) {
                 errors.push(`The field must contain the following regex: ${regex}`);
             }
         }
