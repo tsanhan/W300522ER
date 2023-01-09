@@ -16,7 +16,8 @@ import {
     PRICE_CREATE_PIC_FIELD,
     PRICE_CREATE_PIC_ERROR,
     ALT_CREATE_PIC_ERROR,
-    CREDIT_CREATE_PIC_ERROR
+    CREDIT_CREATE_PIC_ERROR,
+    SIGNUP_PAGE_LINK
 } from "./services/domService.js";
 
 import Picture from "./models/PictureModel.js";
@@ -31,6 +32,7 @@ import { renderSlider as render } from "./services/renderSlider.js";
 import { handleCancelCreatePic, handleCreatePic, onCreateNewPic, setCounter } from "./services/picService.js";
 
 import initialData from "./initialData/initialData.js";
+import { handleSignup, onSignupNewUser, handleCancelSignup } from "./services/userService.js";
 
 //#region הגדרת משתנים גלובליים
 let { pictures, users } = initialData();
@@ -61,6 +63,7 @@ HOME_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.HOME));
 ABOUT_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.ABOUT));
 CREATE_PIC_PAGE_LINK.addEventListener('click', () => handleCreatePic());
 LOGIN_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.LOGIN));
+SIGNUP_PAGE_LINK.addEventListener('click', handleSignup );
 LINK_HOME_PAGE.addEventListener('click', () => onChangePage(PAGES.HOME));
 
 // מצגת תמונות
@@ -71,13 +74,18 @@ SLIDER_NEXT_BTN.addEventListener('click', () => onChangeSliderPic('next'));
 
 
 //#region Create Picture
-
-
 export const handleSubmitNewPic = () => {
     pictures = onCreateNewPic(pictures);
     console.log(pictures);
     handleCancelCreatePic();
 }
+//#endregion
 
-
+//#region Signup new User
+export const handleSubmitSignup = () => {
+    users = onSignupNewUser(users);
+    // clear fields
+    handleCancelSignup();
+    // return to login page
+}
 //#endregion

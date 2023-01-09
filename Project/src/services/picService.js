@@ -32,7 +32,7 @@ export const handleCreatePic = () => {
         const conf = confirm('Are you sure you want to cancel?')
         if (conf) handleCancelCreatePic()
     }
-    
+
     CANCEL_BTN.removeEventListener('click', cancelEH);
     CANCEL_BTN.addEventListener('click', cancelEH);
 

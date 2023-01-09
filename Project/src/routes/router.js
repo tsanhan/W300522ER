@@ -1,4 +1,4 @@
-import { ABOUT_PAGE, ERROR_404_PAGE, HOME_PAGE,CREATE_PIC_PAGE,LOGIN_PAGE } from "../services/domService.js";
+import { ABOUT_PAGE, ERROR_404_PAGE, HOME_PAGE,CREATE_PIC_PAGE,LOGIN_PAGE, SIGNUP_PAGE } from "../services/domService.js";
 import PAGES from "../models/pageModel.js";
 
 const pageToDOMMap = [{
@@ -16,6 +16,9 @@ const pageToDOMMap = [{
 }, {
     page: PAGES.ERROR_404,
     dom: ERROR_404_PAGE
+}, {
+    page: PAGES.SIGN_UP,
+    dom: SIGNUP_PAGE
 }]
 export const onChangePage = page  => {
     pageToDOMMap.forEach(pageMap => pageMap.dom.className = 'd-none'); // hide all pages
