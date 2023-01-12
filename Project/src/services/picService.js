@@ -94,7 +94,7 @@ export const onCreateNewPic = pictures => {
             price: PRICE_CREATE_PIC_FIELD.value
         }, newArray);
         newArray.push(pic);
-
+        
         return newArray;
     } catch (error) {
         console.log(error.message);

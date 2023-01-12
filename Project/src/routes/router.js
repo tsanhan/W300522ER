@@ -1,6 +1,7 @@
-import { ABOUT_PAGE, ERROR_404_PAGE, HOME_PAGE,CREATE_PIC_PAGE,LOGIN_PAGE, SIGNUP_PAGE, ADD_PIC_LINK_CONTAINER, LOGIN_LINK_CONTAINER, LOGOUT_LINK_CONTAINER } from "../services/domService.js";
+import { ABOUT_PAGE, ERROR_404_PAGE, HOME_PAGE,CREATE_PIC_PAGE,LOGIN_PAGE, SIGNUP_PAGE, ADD_PIC_LINK_CONTAINER, LOGIN_LINK_CONTAINER, LOGOUT_LINK_CONTAINER, NO_DATA_CONTAINER, DATA_CONTAINER, TABLE_DISPLAY_MODE, SLIDER_DISPLAY_MODE } from "../services/domService.js";
 import PAGES from "../models/pageModel.js";
 import { getItemFromLocalStorage } from "../services/localStorageService.js";
+import DISPLAY from "../models/displayModel.js";
 
 const pageToDOMMap = [{
     page: PAGES.HOME,
@@ -47,6 +48,23 @@ export const setNavDisplay = () => {
     if(user.isBusiness) return ADD_PIC_LINK_CONTAINER.className = 'nav-item';
 }
 
+export const onChangeDisplayMode = (pictures, display = []) => {
+    NO_DATA_CONTAINER.className = 'd-none';
+    DATA_CONTAINER.className = 'd-none';
+    TABLE_DISPLAY_MODE.className = 'd-none';
+    SLIDER_DISPLAY_MODE.className = 'd-none';
+
+    if(!pictures.length) return NO_DATA_CONTAINER.className = 'd-block';
+    DATA_CONTAINER.className = 'd-block';
+
+    switch (display) {
+        case DISPLAY.SLIDER:
+            return SLIDER_DISPLAY_MODE.className = 'd-block';
+        case DISPLAY.TABLE:
+            return TABLE_DISPLAY_MODE.className = 'd-block';
+
+    }
+}
 
 
 

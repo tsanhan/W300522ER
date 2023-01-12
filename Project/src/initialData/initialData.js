@@ -1,5 +1,6 @@
 import Picture from "../models/PictureModel.js";
 import User from "../models/UserModel.js";
+import { getItemFromLocalStorage, setItemInLocalStorage } from "../services/localStorageService.js";
 
 
 
@@ -76,8 +77,11 @@ const initialData = () => {
             }
         ]
     }
-    
-    const pictures = data.pictures.map(pic => new Picture(pic, data.pictures));
+
+    if(!getItemFromLocalStorage('pictures')) {
+        setItemInLocalStorage('pictures', JSON.stringify(data.pictures));
+    }
+    const pictures = JSON.parse(getItemFromLocalStorage('pictures')).map(pic => new Picture(pic, data.pictures));
     const users = data.users.map(user => new User(user));
 
     return { pictures, users };
