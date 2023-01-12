@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/pic-icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="../src/app.js" type="module"></script>
+
+    <title>Slide Show - App</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+            <div class="container-fluid">
+                <span id="home-link" class="navbar-brand cursor">SSA</span>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse" id="navbarsExample05">
+                    <div class="d-flex justify-content-between col-12">
+                        <div>
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <span class="nav-link active cursor" aria-current="page" id="about-page-link"
+                                        tabindex="1">About</span>
+                                </li>
+                                <li id="add-pic-link-container" class="nav-item">
+                                    <span class="nav-link active cursor" aria-current="page"
+                                        id="create-pic-page-link">Add Pic</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul id="login-link-container" class="navbar-nav">
+                                <li class="nav-item">
+                                    <span class="nav-link active cursor" aria-current="page" id="signup-page-link"
+                                        tabindex="2">Signup</span>
+                                </li>
+                                <li class="nav-item">
+                                    <span class="nav-link active cursor" aria-current="page"
+                                        id="login-page-link">Login</span>
+                                </li>
+                            </ul>
+                            <ul id="logout-link-container" class="d-none">
+                                <li class="nav-item dropdown">
+                                    <span class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
+                                        aria-expanded="false">
+                                        <i class="bi bi-person-circle"></i>
+                                    </span>
+                                    <ul class="dropdown-menu" style="transform: translate(-100px, 10px)">
+                                        <li>
+                                            <span id="edit-user-link" class="dropdown-item cursor"><i
+                                                    class="bi bi-pencil-square"></i> Edit User</span>
+                                        </li>
+                                        <li>
+                                            <span id="logout-link" class="dropdown-item cursor"><i
+                                                    class="bi bi-dash-circle"></i> Logout</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- דף הבית -->
+        <div id="home-page" class="d-block">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="home-page-title" class="text-center display-4">HOME PAGE</h1>
+                    <h2 id="home-page-subtitle" class="fs-5">Here you can pictures</h2>
+                    <hr />
+                </div>
+            </div>
+
+            <!-- תצוגת מידע -->
+            <div id="data-container" class="d-block">
+                <!-- בקרי תצוגה -->
+                <div class="container mb-2">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <i id="slider-icon" class="bi bi-images fs-3 p-1 cursor"></i>
+                            <i id="table-icon" class="bi bi-table fs-3 p-1 cursor"></i>
+                            <i id="cards-icon" class="bi bi-grid-3x3-gap-fill cursor fs-3 p-1"></i>
+                        </div>
+                        <div>
+                            <i id="sort-down-icon" class="bi bi-sort-alpha-down-alt fs-3 p-1 cursor"></i>
+                            <i id="sort-up-icon" class="bi bi-sort-alpha-down fs-3 p-1 cursor"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- מצגת התמונות -->
+                <div id="slider-display" class="d-block">
+                    <div class="center">
+                        <div class="col-12 col-md-10 col-xl-8">
+                            <figure>
+                                <img src="https://cdn.pixabay.com/photo/2022/03/12/19/14/sea-7064686_960_720.jpg"
+                                    alt="beach" class="img-fluid efrat" id="slider-image">
+
+                                <figcaption class="figcaption">
+                                    Photographed by: <span id="slider-credits">VicVic</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="center mb-4">
+                        <div id="slider-prev-btn" class="btn btn-outline-dark mx-2">Prev</div>
+                        <div id="slider-next-btn" class="btn btn-outline-dark mx-2">Next</div>
+                    </div>
+                </div>
+
+                <!-- תצוגת טבלה -->
+                <div id="table-display" class="d-dlock">table display</div>
+            </div>
+
+            <!-- תצוגת אין מידע -->
+            <div id="no-data-container" class="d-none">
+                <div class="center m-t">
+                    <div class="col-12 col-md-10 col-xl-8">
+                        <h2 class="fs-5">OOOps... It seems that there are no pictures to show</h2>
+                        <p id="goto-create-pic-page-link" class="cursor text-primary">click here to add a new picture...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <!-- דף אודות -->
+        <div id="about-page" class="d-none">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="about-page-title" class="text-center display-4">ABOUT PAGE</h1>
+                    <h2 id="about-page-subtitle" class="fs-5">Here you can pictures</h2>
+                    <hr />
+                </div>
+            </div>
+        </div>
+
+        <!-- דף יצירת תמונה -->
+        <div id="create-pic-page" class="d-none">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="create-pic-title" class="text-center display-4">CREATE PIC PAGE</h1>
+                    <h2 id="create-pic-subtitle" class="fs-5">Here you can pictures</h2>
+                    <hr />
+                </div>
+            </div>
+            <div class="center">
+                <form class="col-12 col-md-10 col-xl-8 border p-2 rounded">
+                    <div>
+                        <label for="url-field">url</label>
+                        <input type="url" class="form-control mb-2" name="url" id="url-field" minlength="2" />
+                        <span id="url-error-span" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <label for="alt-field">alt</label>
+                        <input type="text" class="form-control mb-2" name="alt" id="alt-field" minlength="2" />
+                        <span id="alt-error-span" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <label for="credit-field">Credit</label>
+                        <input type="text" class="form-control mb-2" name="credit" id="credit-field" minlength="2" />
+                        <span id="credit-error-span" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label for="price-field">Price</label>
+                        <input type="number" class="form-control mb-2" name="price" id="price-field" minlength="2" />
+                        <span id="price-error-span" class="text-danger"></span>
+                    </div>
+
+                    <input type="button" id="submit-create-pic-btn" value="Submit" class="btn btn-primary col-12 mb-2"
+                        disabled />
+                    <input type="button" id="cancel-create-pic-btn" value="Cancel"
+                        class="btn btn-outline-danger col-12 mb-2" />
+                </form>
+            </div>
+        </div>
+
+        <!-- דף התחברות -->
+        <div id="login-page" class="d-none">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="login-title" class="text-center display-4">LOGIN PIC PAGE</h1>
+                    <h2 id="login-subtitle" class="fs-5">Here you can pictures</h2>
+                    <hr />
+                </div>
+            </div>
+            <div class="center h50">
+                <form class="col-12 col-md-6 col-xl-4 bg-light border p-3 rounded">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="login-email">Email <span class="text-danger">*</span>
+                            </label>
+                            <input placeholder="user@gmail.com" id="login-email" class="form-control" name="login-email"
+                                type="email" autocomplete="off" />
+                            <span id="login-email-error" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-12">
+                            <label for="login-password">Password <span class="text-danger">*</span>
+                            </label>
+                            <input placeholder="enter password" id="login-password" class="form-control"
+                                name="login-password" type="password" autocomplete="off" />
+                            <span id="login-password-error" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 my-1">
+                            Not registered yet?
+                            <span id="link-to-signup-page" class="text-primary cursor">Click here...</span>
+                        </div>
+                        <div class="col-12">
+                            <input id="submit-login-btn" type="button" class="btn btn-primary col-12 my-2" value="Login"
+                                disabled />
+
+                            <input type="button" class="btn btn-danger col-12 mb-2" value="Cancel"
+                                id="cancel-login-btn" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- דף הרשמה -->
+        <div id="signup-page" class="d-none">
+            <div class="bg-light">
+                <!-- הכותרת של דף הבית -->
+                <div class="center pt-4">
+                    <div class="col-12 col-md-10 col-xl-8">
+                        <h1 class="text-center display-4">SIGNUP PAGE</h1>
+                        <h2 class="fs-5">Signup and start like buy and add pictures</h2>
+                        <hr />
+                    </div>
+                </div>
+
+                <div class="center">
+                    <form class="form col-12 col-md-10 col-xl-8 border p-2 rounded">
+                        <h6>Name</h6>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <label for="first-name-signup-field">First Name <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control mb-2" name="first" id="first-name-signup-field"
+                                    minlength="2" autocomplete="off" />
+                                <span id="first-name-signup-error-span" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="last-name-signup-field">Last Name <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control mb-2" name="last" id="last-name-signup-field"
+                                    minlength="2" autocomplete="off" />
+                                <span id="last-name-signup-error-span" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <h6>Address</h6>
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <label for="state-signup-field">State <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control mb-2" name="state" id="state-signup-field"
+                                    minlength="2" autocomplete="off" />
+                                <span id="state-signup-error-span" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <label for="country-signup-field">Country <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control mb-2" name="country" id="country-signup-field"
+                                    minlength="2" autocomplete="off" />
+                                <span id="country-signup-error-span" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <label for="city-signup-field">City</label>
+                                <input autocomplete="off" class="form-control mb-2" type="text" name="city"
+                                    id="city-signup-field" />
+                                <span id="city-signup-error-span" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <label for="street-signup-field">Street</label>
+                                <input autocomplete="off" class="form-control mb-2" type="text" name="street"
+                                    id="street-signup-field" />
+                                <span id="street-signup-error-span" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <label for="house-signup-field">House Number</label>
+                                <input autocomplete="off" class="form-control mb-2" type="number" name="house"
+                                    id="house-signup-field" />
+                                <span id="house-signup-error-span" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <label for="zip-signup-field">Zip Code</label>
+                                <input autocomplete="off" class="form-control mb-2" type="number" name="zip"
+                                    id="zip-signup-field" />
+                                <span id="zip-signup-error-span" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <h6>Means of contact</h6>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <label for="email-signup-field">Email<span class="text-danger">*</span></label>
+                                <input autocomplete="off" class="form-control mb-2" type="text" name="email"
+                                    id="email-signup-field" minlength="2" />
+                                <span id="email-signup-error-span" class="text-danger"></span>
+
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="phone-signup-field">Phone</label>
+                                <input autocomplete="off" class="form-control mb-2" type="text" name="phone"
+                                    id="phone-signup-field" />
+                                <span id="phone-signup-error-span" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <h6>Security</h6>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <label for="password-signup-field">Password<span class="text-danger">*</span></label>
+                                <input autocomplete="off" class="form-control mb-2" type="password" name="password"
+                                    id="password-signup-field" minlength="2" />
+                                <span id="password-signup-error-span" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="password-reenter-signup-field">Re-enter Password<span
+                                        class="text-danger">*</span></label>
+                                <input autocomplete="off" class="form-control mb-2" type="password"
+                                    name="passwordReEnter" id="password-reenter-signup-field" minlength="2" />
+                                <span id="password-reenter-signup-error-span" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="center my-2">
+                            <div>
+                                <label for="isBiz-signup-field">Business Client</label>
+                                <input autocomplete="off" class="form-check-inline mb-2" type="checkbox" name="isBiz"
+                                    id="isBiz-signup-field" />
+                            </div>
+                        </div>
+                        <input type="button" id="submit-signup-user-btn" value="Submit"
+                            class="btn btn-primary col-12 mb-2" disabled />
+                        <input type="button" id="cancel-signup-user-btn" value="Cancel"
+                            class="btn btn-outline-danger col-12 mb-2" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- דף שגיאה 404 -->
+        <div id="error-404-page" class="d-none">
+            <!-- הכותרת של דף הבית -->
+            <div class="center mt-4">
+                <div class="col-12 col-md-10 col-xl-8">
+                    <h1 id="about-page-title" class="text-center display-4">ERROR 404</h1>
+                    <h2 id="about-page-subtitle" class="fs-5">Page not found</h2>
+                    <hr />
+                    <p id="return-to-home-page-link" class="cursor text-primary">click to return to home page</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="border-top pt-3 bg-dark center">
+        <p class="text-light">Created By Victor Yampolsky &copy;</p>
+    </footer>
+</body>
+
+</html>

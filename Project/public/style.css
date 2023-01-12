@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+main {
+    min-height: 87vh;
+}
+
+.efrat{
+    width: 100%;
+}
+
+.figcaption{
+    transform: translateY(-37px);
+    font-weight: 700;
+    background-color: #6c757da1;
+    padding-left: 1rem;
+}
+
