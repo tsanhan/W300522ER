@@ -18,35 +18,100 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
-            <div class="container-fluid">
-                <span class="navbar-brand cursor" id="home-link">SSA</span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSlideshow"
-                    aria-controls="navbarSlideshow" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSlideshow">
-
-                    <ul class="navbar-nav me-auto mb-2 mb-xl-0 justify-content-between"
-                        style="width: -webkit-fill-available;">
-                        <li class="nav-item">
-                            <span class="nav-link active cursor" tabindex="1" id="about-page-link">About</span>
-                        </li>
-                        <li class="nav-item me-auto">
-                            <span class="nav-link active cursor" id="create-pic-page-link">Add Pic</span>
-                        </li>
-                        <li class="nav-item">
-                            <span class="nav-link active cursor" tabindex="2" id="signup-page-link">Signup</span>
-                        </li>
-                        <li class="nav-item">
-                            <span class="nav-link active cursor" id="login-page-link">Login</span>
-                        </li>
-                    </ul>
+        <nav
+          class="navbar navbar-expand-lg navbar-dark bg-dark"
+          aria-label="Fifth navbar example"
+        >
+          <div class="container-fluid">
+            <span id="home-link" class="navbar-brand cursor">SSA</span>
+            <button
+              class="navbar-toggler collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarsExample05"
+              aria-controls="navbarsExample05"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="navbar-collapse collapse" id="navbarsExample05">
+              <div class="d-flex justify-content-between col-12">
+                <div>
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <span
+                        class="nav-link active cursor"
+                        aria-current="page"
+                        id="about-page-link"
+                        tabindex="1"
+                        >About</span
+                      >
+                    </li>
+                    <li id="add-pic-link-container" class="nav-item">
+                      <span
+                        class="nav-link active cursor"
+                        aria-current="page"
+                        id="create-pic-page-link"
+                        >Add Pic</span
+                      >
+                    </li>
+                  </ul>
                 </div>
+                <div>
+                  <ul id="login-link-container" class="navbar-nav">
+                    <li class="nav-item">
+                      <span
+                        class="nav-link active cursor"
+                        aria-current="page"
+                        id="signup-page-link"
+                        tabindex="2"
+                        >Signup</span
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <span
+                        class="nav-link active cursor"
+                        aria-current="page"
+                        id="login-page-link"
+                        >Login</span
+                      >
+                    </li>
+                  </ul>
+                  <ul id="logout-link-container" class="d-none">
+                    <li class="nav-item dropdown">
+                      <span
+                        class="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        role="button"
+                        aria-expanded="false"
+                      >
+                        <i class="bi bi-person-circle"></i>
+                      </span>
+                      <ul
+                        class="dropdown-menu"
+                        style="transform: translate(-100px, 10px)"
+                      >
+                        <li>
+                          <span id="edit-user-link" class="dropdown-item cursor"
+                            ><i class="bi bi-pencil-square"></i> Edit User</span
+                          >
+                        </li>
+                        <li>
+                          <span id="logout-link" class="dropdown-item cursor"
+                            ><i class="bi bi-dash-circle"></i> Logout</span
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+          </div>
         </nav>
-    </header>
+      </header>
     <main>
         <!-- דף הבית -->
         <div id="home-page" class="d-block">

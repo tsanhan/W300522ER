@@ -1,7 +1,7 @@
 import { handleSubmitSignup } from "../app.js"
 import PAGES from "../models/pageModel.js"
 import User from "../models/UserModel.js"
-import { onChangePage } from "../routes/router.js"
+import { onChangePage, setNavDisplay } from "../routes/router.js"
 import { BIZ_SIGNUP_FIELD, CANCEL_BTN_SIGNUP, CANCEL_LOGIN_BTN, CITY_SIGNUP_ERROR, CITY_SIGNUP_FIELD, COUNTRY_SIGNUP_ERROR, COUNTRY_SIGNUP_FIELD, EMAIL_LOGIN_ERROR, EMAIL_LOGIN_FIELD, EMAIL_SIGNUP_ERROR, EMAIL_SIGNUP_FIELD, FIRST_SIGNUP_ERROR, FIRST_SIGNUP_FIELD, HOUSE_SIGNUP_ERROR, HOUSE_SIGNUP_FIELD, LAST_SIGNUP_ERROR, LAST_SIGNUP_FIELD, PASSWORD_LOGIN_ERROR, PASSWORD_LOGIN_FIELD, PASSWORD_RE_ENTER_SIGNUP_ERROR, PASSWORD_RE_ENTER_SIGNUP_FIELD, PASSWORD_SIGNUP_ERROR, PASSWORD_SIGNUP_FIELD, PHONE_SIGNUP_ERROR, PHONE_SIGNUP_FIELD, STATE_SIGNUP_ERROR, STATE_SIGNUP_FIELD, STREET_SIGNUP_ERROR, STREET_SIGNUP_FIELD, SUBMIT_BTN_SIGNUP, SUBMIT_LOGIN_BTN, ZIP_SIGNUP_ERROR, ZIP_SIGNUP_FIELD } from "./domService.js"
 import useForm from "./formService.js"
 import { setItemInLocalStorage } from "./localStorageService.js"
@@ -245,15 +245,15 @@ const createUserListeners = () => {
 
 }
 
-export const handleLogin = () => {
+export const handleLogin = (users) => {
     onChangePage(PAGES.LOGIN);
     loginUserListeners();
 
     CANCEL_LOGIN_BTN.removeEventListener("click", handleCancelLogin);
     CANCEL_LOGIN_BTN.addEventListener("click", handleCancelLogin);
 
-    // SUBMIT_LOGIN_BTN.removeEventListener("click", handleSubmitLogin);
-    // SUBMIT_LOGIN_BTN.addEventListener("click", handleSubmitLogin);
+    SUBMIT_LOGIN_BTN.removeEventListener("click",() => handleSubmitLogin(users));
+    SUBMIT_LOGIN_BTN.addEventListener("click", () => handleSubmitLogin(users));
 }
 
 const loginUserListeners = () => {
@@ -283,6 +283,15 @@ export const handleCancelLogin = () => {
     onChangePage(PAGES.HOME);
 };
 
+
+export const handleSubmitLogin = (users) => {
+    const email = EMAIL_LOGIN_FIELD.value;
+    const password = PASSWORD_LOGIN_FIELD.value;
+    onLogin(email, password, users);
+    onChangePage(PAGES.HOME);
+}
+
+
 export const onLogin = (email, password, users = []) => {
     if (!users.length) throw new Error("You are not registered, please sign up");
     const user = users.find(user => user.email === email);
@@ -303,6 +312,5 @@ export const onLogin = (email, password, users = []) => {
 
     setItemInLocalStorage("user", payload);
     handleCancelLogin();
-
-    
+    setNavDisplay();
 }

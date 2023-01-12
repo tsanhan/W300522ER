@@ -27,7 +27,7 @@ import PAGES from "./models/pageModel.js";
 import User from "./models/UserModel.js";
 
 
-import { onChangePage } from "./routes/router.js";
+import { onChangePage, setNavDisplay } from "./routes/router.js";
 import { renderSlider as render } from "./services/renderSlider.js";
 import { handleCancelCreatePic, handleCreatePic, onCreateNewPic, setCounter } from "./services/picService.js";
 
@@ -62,7 +62,10 @@ const onChangeSliderPic = controller => {
 HOME_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.HOME));
 ABOUT_PAGE_LINK.addEventListener('click', () => onChangePage(PAGES.ABOUT));
 CREATE_PIC_PAGE_LINK.addEventListener('click', () => handleCreatePic());
-LOGIN_PAGE_LINK.addEventListener('click', handleLogin);
+LOGIN_PAGE_LINK.addEventListener('click', () => {
+    let { users } = initialData();
+    handleLogin(users);
+} );
 SIGNUP_PAGE_LINK.addEventListener('click', handleSignup);
 LINK_HOME_PAGE.addEventListener('click', () => onChangePage(PAGES.HOME));
 
@@ -89,3 +92,6 @@ export const handleSubmitSignup = () => {
     // return to login page
 }
 //#endregion
+
+
+setNavDisplay();
